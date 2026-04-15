@@ -636,6 +636,53 @@
                     </div>
                 </div>
 
+                <!-- Standart HTTP Hataları -->
+                <div class="reveal mb-10">
+                    <h2 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
+                        <i class="ph-bold ph-globe"></i> Standart HTTP Hataları (6xxx)
+                    </h2>
+                    <div class="bg-gray-800/60 rounded-xl border border-gray-700/50 overflow-hidden divide-y divide-gray-700/50">
+                        <div class="grid grid-cols-3 gap-4 px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <span>Kod</span><span>Mesaj</span><span>Yapmanız Gereken</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6001</span>
+                            <span class="text-gray-300">İstenen kaynak bulunamadı. (404)</span>
+                            <span class="text-gray-400 text-sm">Uygulamayı güncelleyin. Sorun devam ederse destek ekibine bildirin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6002</span>
+                            <span class="text-gray-300">Geçersiz istek metodu. (405)</span>
+                            <span class="text-gray-400 text-sm">Uygulamayı güncelleyin. Sorun devam ederse destek ekibine bildirin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6003</span>
+                            <span class="text-gray-300">İstek formatı hatalı veya eksik. (400)</span>
+                            <span class="text-gray-400 text-sm">Uygulamayı güncelleyin. Sorun devam ederse destek ekibine bildirin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6004</span>
+                            <span class="text-gray-300">Gönderilen veriler doğrulama kurallarını karşılamıyor.</span>
+                            <span class="text-gray-400 text-sm">Formdaki bilgileri kontrol edin ve tekrar deneyin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6005</span>
+                            <span class="text-gray-300">Desteklenmeyen içerik tipi. (415)</span>
+                            <span class="text-gray-400 text-sm">Uygulamayı güncelleyin. Sorun devam ederse destek ekibine bildirin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6006</span>
+                            <span class="text-gray-300">Bu işlem için yetkiniz yok. (403)</span>
+                            <span class="text-gray-400 text-sm">Hesabınızın bu özelliğe erişim izni olmayabilir. Destek ekibine bildirin.</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 px-6 py-4 hover:bg-gray-700/30 transition">
+                            <span class="font-mono text-blue-400">GUARD:6007</span>
+                            <span class="text-gray-300">Servis şu an kullanılamıyor. (503)</span>
+                            <span class="text-gray-400 text-sm">Birkaç dakika bekleyip tekrar deneyin.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Destek CTA -->
                 <div class="reveal bg-blue-900/30 border border-blue-700/50 rounded-xl p-8 text-center">
                     <i class="ph-bold ph-headset text-4xl text-blue-400 mb-4 block"></i>
