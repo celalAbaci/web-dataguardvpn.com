@@ -4,73 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KVKK Aydınlatma Metni - DataGuardVPN</title>
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- İkonlar için Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0f1f;
-            color: #e0e0e0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        main section {
-             animation: fadeIn 0.5s ease-in-out;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .backdrop-blur-custom {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background-color: rgba(10, 15, 31, 0.75);
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0f1f; color: #e0e0e0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        main section { animation: fadeIn 0.5s ease-in-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(10, 15, 31, 0.75); }
         .bg-brand-dark { background-color: #0a0f1f; }
         .bg-brand-card { background-color: #111827; }
-        
-        /* Tailwind Typography (Prose) için temel stiller */
-        .prose-invert ul > li::before {
-             background-color: #6b7280; /* Madde işareti rengi */
-        }
-        .prose-invert a {
-            color: #60a5fa; /* Mavi link rengi */
-        }
-         .prose-invert a:hover {
-            color: #93c5fd;
-        }
+        .prose-content h2 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
+        .prose-content h3 { font-size: 0.95rem; font-weight: 600; color: #93c5fd; margin-top: 1.25rem; margin-bottom: 0.4rem; }
+        .prose-content p { color: #d1d5db; line-height: 1.75; margin-bottom: 0.9rem; }
+        .prose-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ul li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.2rem; }
+        .prose-content ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ol li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.2rem; }
+        .prose-content strong { color: #f3f4f6; }
+        .prose-content a { color: #60a5fa; text-decoration: underline; }
+        .prose-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .prose-content th { background-color: #1f2937; color: #9ca3af; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 1rem; text-align: left; }
+        .prose-content td { padding: 0.65rem 1rem; border-bottom: 1px solid #374151; color: #d1d5db; font-size: 0.9rem; vertical-align: top; }
+        .prose-content tr:hover td { background-color: #1f2937; }
+        .info-box { background-color: #1e3a5f; border: 1px solid #2563eb66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .info-box p { color: #93c5fd; margin: 0; font-size: 0.9rem; }
     </style>
 </head>
 <body class="bg-brand-dark text-gray-200">
 
-    <!-- ===== HEADER / MENU ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="sticky top-0 z-50 w-full backdrop-blur-custom shadow-lg border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo ve Marka Adı -->
                 <a href="index.html" class="flex items-center space-x-3">
-                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=LOGO'; this.onerror=null;">
+                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
                     <span class="text-2xl font-extrabold text-white tracking-tight">DataGuardVPN</span>
                 </a>
-                
-                <!-- Desktop Menü -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Ana Sayfa</a>
                     <a href="about.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Hakkımızda</a>
@@ -78,15 +52,9 @@
                     <a href="consent.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Açık Rıza</a>
                     <a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İletişim</a>
                 </nav>
-                
-                <!-- İletişim Butonu (Desktop) -->
                 <div class="hidden md:block">
-                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-                        Bize Ulaşın
-                    </a>
+                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
                 </div>
-
-                <!-- Mobil Menü Butonu -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
                         <i class="ph-bold ph-list text-3xl"></i>
@@ -94,8 +62,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobil Menü (Gizli) -->
         <div id="mobile-menu" class="md:hidden hidden bg-brand-card shadow-xl">
             <a href="index.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Ana Sayfa</a>
             <a href="about.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Hakkımızda</a>
@@ -103,64 +69,195 @@
             <a href="consent.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Açık Rıza Metni</a>
             <a href="contact.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İletişim</a>
             <div class="p-4">
-                 <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-                    Bize Ulaşın
-                </a>
+                <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
             </div>
         </div>
     </header>
 
     <!-- ===== ANA İÇERİK ===== -->
     <main class="overflow-x-hidden">
-
-        <!-- ===== KVKK AYDINLATMA METNİ ===== -->
-        <section id="kvkk" class="py-24">
+        <section class="py-24">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <h1 class="text-4xl font-extrabold text-center text-white mb-12 reveal">KVKK Aydınlatma Metni</h1>
-                <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 reveal prose prose-invert max-w-none text-gray-300 prose-headings:text-white prose-strong:text-white">
-                    <p><strong>ÖNEMLİ NOT:</strong> Bu metin, yasal bir belge taslağıdır ve profesyonel bir hukuk danışmanı tarafından incelenip onaylanmadan kullanılmamalıdır. Şirketinizin özel süreçlerine göre uyarlanmalıdır.</p>
-                    <hr class="border-gray-600">
-                    
+                <div class="reveal text-center mb-12">
+                    <span class="inline-block px-4 py-1.5 bg-blue-900/50 text-blue-400 text-sm font-semibold rounded-full mb-4 border border-blue-700/50">6698 Sayılı KVKK</span>
+                    <h1 class="text-4xl font-extrabold text-white mb-3">Kişisel Verilerin Korunması<br>Kanunu Aydınlatma Metni</h1>
+                    <p class="text-gray-400">Son güncelleme: Nisan 2026</p>
+                </div>
+
+                <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 reveal prose-content">
+
+                    <div class="info-box">
+                        <p><i class="ph-bold ph-info mr-2"></i> Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi ile Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ kapsamında hazırlanmıştır.</p>
+                    </div>
+
                     <h2>1. Veri Sorumlusunun Kimliği</h2>
-                    <p>DataGuardVPN ("Şirket") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, veri sorumlusu sıfatıyla, kişisel verilerinizi aşağıda açıklanan amaçlar doğrultusunda işlemekteyiz.</p>
-                    
-                    <h2>2. İşlenen Kişisel Veriler</h2>
-                    <p>VPN hizmetimizin doğası gereği, "Sıfır Kayıt" politikası izlemekteyiz. Bu, internet trafiğinizin, DNS sorgularınızın veya bağlantı günlüklerinizin (IP adresiniz, bağlantı zaman damgaları vb.) tarafımızca saklanmadığı anlamına gelir. Ancak, hizmetlerimizi sunabilmek için minimum düzeyde bazı verileri işlememiz gerekmektedir:</p>
+                    <p><strong>DataGuardVPN</strong> ("Şirket"), 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla hareket etmektedir.</p>
                     <ul>
-                        <li><strong>Hesap Bilgileri:</strong> Hizmetimize kaydolurken sağladığınız e-posta adresi ve ödeme bilgileri (Ödeme bilgileri doğrudan iş ortaklarımız olan ödeme sağlayıcıları tarafından işlenir, biz sadece ödeme durumunu görürüz).</li>
-                        <li><strong>Hizmet Kullanım Verileri (Toplu ve Anonim):</strong> Sunucu yüklerini izlemek ve hizmet kalitesini artırmak amacıyla toplanan anonimleştirilmiş veriler (Örn: toplam sunucu bant genişliği kullanımı). Bu veriler asla bireysel bir kullanıcıyla ilişkilendirilmez.</li>
-                        <li><strong>İletişim Verileri:</strong> Müşteri desteği taleplerinizde bize ilettiğiniz ad, e-posta ve mesaj içeriği.</li>
+                        <li><strong>Hizmet Adı:</strong> DataGuardVPN</li>
+                        <li><strong>Web Sitesi:</strong> dataguardvpn.com</li>
+                        <li><strong>İletişim:</strong> destek@dataguardvpn.com</li>
                     </ul>
-                    
-                    <h2>3. Kişisel Verilerin İşlenme Amaçları</h2>
-                    <p>Kişisel verileriniz, aşağıdaki amaçlarla sınırlı olarak işlenmektedir:</p>
-                    <ul>
-                        <li>Hizmet sözleşmesinin kurulması ve ifası (VPN bağlantı hizmetinin sunulması).</li>
-                        <li>Hesabınızın yönetilmesi ve faturalandırma işlemlerinin yapılması.</li>
-                        <li>Müşteri hizmetleri ve teknik destek sağlanması.</li>
-                        <li>Hizmetlerimizin iyileştirilmesi ve optimize edilmesi (anonim verilerle).</li>
-                        <li>Yasal yükümlülüklerin yerine getirilmesi.</li>
-                    </ul>
+
+                    <h2>2. İşlenen Kişisel Veriler ve Kategorileri</h2>
+                    <p>Hizmetlerimizin sunulabilmesi için aşağıdaki kategorilerde kişisel veriler işlenmektedir:</p>
+
+                    <table>
+                        <thead>
+                            <tr><th>Veri Kategorisi</th><th>İşlenen Veriler</th><th>Kaynak</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Kimlik Verileri</strong></td>
+                                <td>Kullanıcı adı, e-posta adresi</td>
+                                <td>Kullanıcı tarafından sağlanır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>İletişim Verileri</strong></td>
+                                <td>E-posta adresi, destek talep içeriği</td>
+                                <td>Kullanıcı tarafından sağlanır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cihaz Verileri</strong></td>
+                                <td>Cihaz adı, cihaz kimliği, işletim sistemi versiyonu, uygulama versiyonu</td>
+                                <td>Uygulama tarafından otomatik toplanır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bağlantı Meta Verileri</strong></td>
+                                <td>Bağlantı başlangıç/bitiş zamanı, bağlanılan sunucu konumu, kullanılan protokol, oturum süresi</td>
+                                <td>Uygulama tarafından otomatik toplanır</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Abonelik Verileri</strong></td>
+                                <td>Abonelik planı, başlangıç/bitiş tarihi, aktiflik durumu</td>
+                                <td>Google Play ve kullanıcı işlemleri</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Hesap Verileri</strong></td>
+                                <td>Ad, e-posta (yalnızca Google ile giriş tercih edenler için)</td>
+                                <td>Google OAuth2 üzerinden sağlanır</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="info-box">
+                        <p><i class="ph-bold ph-shield-check mr-2"></i> <strong>VPN tünel trafiği kesinlikle kaydedilmemektedir.</strong> VPN bağlantısı üzerinden eriştiğiniz web siteleri, uygulamalar, DNS sorguları veya içerikler hiçbir şekilde depolanmaz veya izlenmez. IP adresiniz bağlantı sırasında geçici olarak kullanılır; oturum sona erdikten sonra saklanmaz.</p>
+                    </div>
+
+                    <h2>3. Kişisel Verilerin İşlenme Amaçları ve Hukuki Dayanakları</h2>
+
+                    <table>
+                        <thead>
+                            <tr><th>İşleme Amacı</th><th>Hukuki Dayanak (KVKK Md. 5)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VPN bağlantı hizmetinin sunulması ve sürdürülmesi</td>
+                                <td>Sözleşmenin ifası (Md. 5/2-c)</td>
+                            </tr>
+                            <tr>
+                                <td>Hesap oluşturma, kimlik doğrulama ve hesap yönetimi</td>
+                                <td>Sözleşmenin ifası (Md. 5/2-c)</td>
+                            </tr>
+                            <tr>
+                                <td>Abonelik takibi ve faturalandırma işlemleri</td>
+                                <td>Sözleşmenin ifası / Kanuni yükümlülük (Md. 5/2-c, ç)</td>
+                            </tr>
+                            <tr>
+                                <td>Müşteri hizmetleri ve teknik destek</td>
+                                <td>Sözleşmenin ifası / Meşru menfaat (Md. 5/2-c, f)</td>
+                            </tr>
+                            <tr>
+                                <td>Hizmet güvenliğinin sağlanması ve kötüye kullanımın önlenmesi</td>
+                                <td>Meşru menfaat (Md. 5/2-f)</td>
+                            </tr>
+                            <tr>
+                                <td>Bağlantı sorunlarının tespiti ve giderilmesi</td>
+                                <td>Sözleşmenin ifası / Meşru menfaat (Md. 5/2-c, f)</td>
+                            </tr>
+                            <tr>
+                                <td>Yasal yükümlülüklerin yerine getirilmesi</td>
+                                <td>Kanuni yükümlülük (Md. 5/2-ç)</td>
+                            </tr>
+                            <tr>
+                                <td>Pazarlama iletişimi gönderilmesi</td>
+                                <td>Açık rıza (Md. 5/1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <h2>4. Kişisel Verilerin Aktarılması</h2>
-                    <p>Kişisel verileriniz, yasal zorunluluklar ve resmi makamların talepleri dışında, yurt içinde veya yurt dışında üçüncü taraflarla kesinlikle paylaşılmaz. Ödeme işlemleri için güvenli ödeme sağlayıcı iş ortaklarımızla zorunlu veriler paylaşılabilir.</p>
-
-                    <h2>5. Kişisel Veri Sahibinin Hakları (KVKK Madde 11)</h2>
-                    <p>KVKK'nın 11. maddesi uyarınca, veri sahibi olarak haklarınız şunlardır:</p>
+                    <p>Kişisel verileriniz aşağıdaki durumlarda ve belirtilen taraflarla sınırlı ölçüde paylaşılabilir:</p>
                     <ul>
-                        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
-                        <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
-                        <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
-                        <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
-                        <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
-                        <li>KVKK'da öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini isteme,</li>
-                        <li>... (diğer yasal haklar)</li>
+                        <li><strong>Google LLC:</strong> Google ile giriş (OAuth2) ve Google Play üzerinden abonelik işlemleri için zorunlu veriler Google'ın gizlilik politikası çerçevesinde işlenir.</li>
+                        <li><strong>Yetkili Resmi Kurumlar:</strong> Yürürlükteki mevzuat veya yetkili makamların talebi doğrultusunda, yalnızca yasal olarak zorunlu olan minimum veriler paylaşılır. VPN trafik içeriği kaydedilmediğinden bu kapsamda paylaşılacak içerik bilgisi bulunmamaktadır.</li>
+                        <li><strong>Altyapı Hizmet Sağlayıcıları:</strong> Sunucu altyapısı için çalışılan iş ortakları, gizlilik ve veri işleme sözleşmeleri kapsamında sınırlı teknik verilerle çalışır.</li>
                     </ul>
-                    <p>Bu haklarınızı kullanmak için [iletisim@dataguardvpn.com] adresine e-posta gönderebilirsiniz.</p>
+                    <p>Kişisel verileriniz üçüncü taraflara <strong>ticari amaçla satılmaz</strong>, reklam ağlarıyla <strong>paylaşılmaz</strong>.</p>
+
+                    <h2>5. Kişisel Verilerin Yurt Dışına Aktarımı</h2>
+                    <p>VPN altyapısının niteliği gereği sunucular yurt içi ve yurt dışında konumlanmaktadır. Yurt dışına aktarımlar KVKK'nın 9. maddesi kapsamında gerçekleştirilmekte olup yeterli koruma düzeyine sahip ülkelere aktarım yapılmakta ya da KVKK Kurulu kararlarına uygun güvenceler sağlanmaktadır. Google hizmetlerine ilişkin aktarımlar Google'ın Standart Sözleşme Maddeleri kapsamında gerçekleştirilmektedir.</p>
+
+                    <h2>6. Kişisel Verilerin Saklama Süreleri</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Veri Kategorisi</th><th>Saklama Süresi</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hesap ve kimlik verileri</td>
+                                <td>Hesap aktif olduğu süre + yasal zorunluluk halinde en fazla 10 yıl</td>
+                            </tr>
+                            <tr>
+                                <td>Bağlantı meta verileri</td>
+                                <td>Azami 90 gün</td>
+                            </tr>
+                            <tr>
+                                <td>Abonelik ve ödeme kayıtları</td>
+                                <td>İlgili mevzuat gereği 10 yıl</td>
+                            </tr>
+                            <tr>
+                                <td>Müşteri destek talepleri</td>
+                                <td>Talebin çözülmesinden itibaren 2 yıl</td>
+                            </tr>
+                            <tr>
+                                <td>VPN trafik içeriği</td>
+                                <td>Hiçbir zaman saklanmaz</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>7. Kişisel Veri Sahibinin Hakları (KVKK Madde 11)</h2>
+                    <p>KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:</p>
+                    <ol>
+                        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+                        <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,</li>
+                        <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+                        <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme,</li>
+                        <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
+                        <li>KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme,</li>
+                        <li>Düzeltme, silme veya yok etme işlemlerinin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+                        <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+                        <li>Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme.</li>
+                    </ol>
+
+                    <h2>8. Başvuru Yöntemi</h2>
+                    <p>Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki kanalları kullanabilirsiniz:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: KVKK Başvurusu)</li>
+                    </ul>
+                    <p>Başvurunuzda; adınız, soyadınız, T.C. kimlik numaranız (yabancı uyruklular için pasaport numarası), tebligata esas yerleşim yeri veya iş yeri adresiniz, varsa bildirime esas e-posta adresiniz, talep konunuz yer almalıdır. Kimliğinizi doğrulamamız gerekebilir.</p>
+                    <p>Başvurularınız, talebin niteliğine göre en geç <strong>30 gün</strong> içinde ücretsiz olarak sonuçlandırılacaktır. Ancak işlemin ayrıca bir maliyet gerektirmesi hâlinde Kişisel Verileri Koruma Kurulu tarafından belirlenen tarife uygulanabilir.</p>
+                    <p>Başvurunuzun reddedilmesi, verilen cevabın yetersiz bulunması veya süresinde cevap verilmemesi hâlinde <strong>Kişisel Verileri Koruma Kurulu</strong>'na şikâyette bulunma hakkınız saklıdır.</p>
+
+                    <h2>9. Güvenlik Önlemleri</h2>
+                    <p>Kişisel verilerinizin güvenliğini sağlamak amacıyla; endüstri standardı şifreleme (TLS/SSL), erişim kontrolü ve yetkilendirme mekanizmaları, düzenli güvenlik değerlendirmeleri gibi teknik ve idari tedbirler uygulanmaktadır. Şifrelerin şifreli (hash) biçimde saklandığı, kart bilgilerinin tarafımızca hiçbir zaman tutulmadığı, VPN tünel içeriğinin denetlenmediği ve kaydedilmediği belirtilmelidir.</p>
+
+                    <h2>10. Aydınlatma Metninin Güncelliği</h2>
+                    <p>Bu metin, yasal düzenlemeler veya hizmetlerimizdeki değişiklikler doğrultusunda güncellenebilir. Önemli değişiklikler web sitesi üzerinden ve gerektiğinde e-posta yoluyla duyurulur. Güncel versiyona her zaman <a href="kvkk.html">dataguardvpn.com/kvkk.html</a> adresinden ulaşabilirsiniz.</p>
+
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- ===== FOOTER ===== -->
@@ -183,41 +280,25 @@
                     <a href="index.html" class="text-gray-400 hover:text-white">Ana Sayfa</a>
                     <a href="about.html" class="text-gray-400 hover:text-white">Hakkımızda</a>
                     <a href="kvkk.html" class="text-gray-400 hover:text-white">KVKK</a>
+                    <a href="consent.html" class="text-gray-400 hover:text-white">Açık Rıza</a>
                     <a href="contact.html" class="text-gray-400 hover:text-white">İletişim</a>
                 </nav>
                 <div class="mt-8 md:mt-0 md:order-1">
-                    <p class="text-center text-base text-gray-400">
-                        &copy; 2025 DataGuardVPN. Tüm hakları saklıdır.
-                    </p>
+                    <p class="text-center text-base text-gray-400">&copy; 2026 DataGuardVPN. Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
             });
-
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
 </body>

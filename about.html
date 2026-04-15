@@ -3,63 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda - DataGuardVPN</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <title>Hakkımızda & Kullanım Şartları - DataGuardVPN</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- İkonlar için Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0f1f;
-            color: #e0e0e0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        main section {
-             animation: fadeIn 0.5s ease-in-out;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .backdrop-blur-custom {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background-color: rgba(10, 15, 31, 0.75);
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0f1f; color: #e0e0e0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        main section { animation: fadeIn 0.5s ease-in-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(10, 15, 31, 0.75); }
         .bg-brand-dark { background-color: #0a0f1f; }
         .bg-brand-card { background-color: #111827; }
+        .prose-content h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
+        .prose-content h3 { font-size: 1rem; font-weight: 600; color: #93c5fd; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        .prose-content p { color: #d1d5db; line-height: 1.75; margin-bottom: 1rem; }
+        .prose-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ul li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.25rem; }
+        .prose-content strong { color: #f3f4f6; }
+        .prose-content a { color: #60a5fa; text-decoration: underline; }
+        .tab-btn { padding: 0.6rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: #fff; }
+        .tab-btn:not(.active) { background-color: #1f2937; color: #9ca3af; }
+        .tab-btn:not(.active):hover { background-color: #374151; color: #e5e7eb; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
     </style>
 </head>
 <body class="bg-brand-dark text-gray-200">
 
-    <!-- ===== HEADER / MENU ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="sticky top-0 z-50 w-full backdrop-blur-custom shadow-lg border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo ve Marka Adı -->
                 <a href="index.html" class="flex items-center space-x-3">
-                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=LOGO'; this.onerror=null;">
+                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
                     <span class="text-2xl font-extrabold text-white tracking-tight">DataGuardVPN</span>
                 </a>
-                
-                <!-- Desktop Menü -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Ana Sayfa</a>
                     <a href="about.html" class="text-blue-400 font-medium transition duration-300">Hakkımızda</a>
@@ -67,15 +50,9 @@
                     <a href="consent.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Açık Rıza</a>
                     <a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İletişim</a>
                 </nav>
-                
-                <!-- İletişim Butonu (Desktop) -->
                 <div class="hidden md:block">
-                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-                        Bize Ulaşın
-                    </a>
+                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
                 </div>
-
-                <!-- Mobil Menü Butonu -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
                         <i class="ph-bold ph-list text-3xl"></i>
@@ -83,8 +60,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobil Menü (Gizli) -->
         <div id="mobile-menu" class="md:hidden hidden bg-brand-card shadow-xl">
             <a href="index.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Ana Sayfa</a>
             <a href="about.html" class="block px-4 py-3 text-lg text-blue-400 hover:bg-gray-700">Hakkımızda</a>
@@ -92,42 +67,172 @@
             <a href="consent.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Açık Rıza Metni</a>
             <a href="contact.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İletişim</a>
             <div class="p-4">
-                 <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-                    Bize Ulaşın
-                </a>
+                <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
             </div>
         </div>
     </header>
 
     <!-- ===== ANA İÇERİK ===== -->
     <main class="overflow-x-hidden">
-
-        <!-- ===== HAKKIMIZDA (ABOUT) ===== -->
-        <section id="about" class="py-24">
+        <section class="py-24">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <h1 class="text-4xl font-extrabold text-center text-white mb-12 reveal">Hakkımızda</h1>
-                <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 reveal">
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        DataGuardVPN, dijital gizliliğin temel bir insan hakkı olduğuna inanan bir grup siber güvenlik uzmanı ve teknoloji tutkunu tarafından kurulmuştur. Günümüzün giderek dijitalleşen dünyasında, kişisel verilerin korunmasının ve çevrimiçi anonimliğin ne kadar kritik olduğunun farkındayız. Bu farkındalıkla yola çıkarak, sıradan internet kullanıcılarının bile kolayca kullanabileceği, ancak en karmaşık tehditlere karşı bile güçlü bir koruma sağlayan bir VPN hizmeti geliştirdik.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        Ekibimiz, merkezi olmayan bir yapıya sahip olup, dünyanın farklı yerlerinden en iyi yetenekleri bir araya getirmektedir. Bu, bize hem küresel bir bakış açısı kazandırmakta hem de 7/24 kesintisiz hizmet ve destek sunma imkanı vermektedir.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        Teknolojimiz, en yeni şifreleme protokolleri ve güvenlik standartları üzerine kuruludur. "Sıfır Kayıt" politikamız, kullanıcılarımızın gizliliğine olan sarsılmaz bağlılığımızın bir garantisidir. DataGuardVPN olarak, interneti herkes için daha güvenli ve daha özgür bir yer yapma misyonuyla çalışıyoruz.
-                    </p>
-                    <div class="border-t border-gray-700 pt-6">
-                        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Desteklenen Protokoller</p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-blue-600/20 border border-blue-500/40 text-blue-300 rounded-full text-sm font-medium">OpenVPN</span>
-                            <span class="px-4 py-2 bg-cyan-600/20 border border-cyan-500/40 text-cyan-300 rounded-full text-sm font-medium">VLESS / Reality</span>
-                            <span class="px-4 py-2 bg-purple-600/20 border border-purple-500/40 text-purple-300 rounded-full text-sm font-medium">Stealth Mod</span>
+
+                <!-- Sekme Başlıkları -->
+                <div class="flex flex-wrap gap-3 mb-10 reveal" id="tab-buttons">
+                    <button class="tab-btn active" data-tab="about">Hakkımızda</button>
+                    <button class="tab-btn" data-tab="terms">Kullanım Şartları</button>
+                    <button class="tab-btn" data-tab="privacy">Gizlilik Politikası</button>
+                </div>
+
+                <!-- ── HAKKIMIZDA ── -->
+                <div class="tab-content active reveal" id="tab-about">
+                    <h1 class="text-4xl font-extrabold text-white mb-8">Hakkımızda</h1>
+                    <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
+
+                        <p>DataGuardVPN, dijital gizliliğin temel bir hak olduğuna inanan bir ekip tarafından geliştirilmiş bir sanal özel ağ (VPN) hizmetidir. Amacımız; her seviyeden kullanıcının kolayca kullanabileceği, güçlü şifreleme ve modern protokollerle desteklenmiş, şeffaf bir gizlilik hizmeti sunmaktır.</p>
+
+                        <p>Hizmetimiz; OpenVPN, VLESS+Reality ve Stealth protokollerini desteklemekte olup hem ücretsiz hem de premium abonelik seçenekleriyle sunulmaktadır. Premium kullanıcılar daha fazla sunucu konumuna ve yüksek bant genişliği önceliğine sahip olur.</p>
+
+                        <h2>Temel İlkelerimiz</h2>
+                        <ul>
+                            <li><strong>Sıfır Trafik Kaydı:</strong> VPN tüneli üzerinden yaptığınız gezinti, eriştiğiniz içerikler veya DNS sorgularınız hiçbir şekilde kaydedilmez veya depolanmaz.</li>
+                            <li><strong>Şeffaflık:</strong> Hangi verileri topladığımızı ve neden topladığımızı açıkça belirtiyoruz. Sakladığımız veriler yalnızca hizmetin işleyişi için zorunlu olan hesap, cihaz ve bağlantı meta verilerinden ibarettir.</li>
+                            <li><strong>Reklamsız Hizmet:</strong> Ücretsiz sürümümüzde dahi reklam gösterimi veya reklam amaçlı veri paylaşımı yapılmamaktadır.</li>
+                            <li><strong>Güçlü Şifreleme:</strong> Bağlantılarınız endüstri standardı şifreleme protokolleriyle korunur. Trafik içeriğiniz incelenmez.</li>
+                        </ul>
+
+                        <h2>Desteklenen Protokoller</h2>
+                        <div class="flex flex-wrap gap-3 mt-2 mb-6">
+                            <span class="px-4 py-2 bg-blue-600/20 border border-blue-500/40 text-blue-300 rounded-full text-sm font-medium">OpenVPN (UDP/TCP)</span>
+                            <span class="px-4 py-2 bg-cyan-600/20 border border-cyan-500/40 text-cyan-300 rounded-full text-sm font-medium">VLESS + Reality</span>
+                            <span class="px-4 py-2 bg-purple-600/20 border border-purple-500/40 text-purple-300 rounded-full text-sm font-medium">Stealth (Xray)</span>
                         </div>
+
+                        <h2>İletişim</h2>
+                        <p>Her türlü soru, öneri ve destek talebiniz için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
+                        <p>Web sitesi: <a href="https://dataguardvpn.com">dataguardvpn.com</a></p>
                     </div>
                 </div>
+
+                <!-- ── KULLANIM ŞARTLARI ── -->
+                <div class="tab-content reveal" id="tab-terms">
+                    <div class="flex items-center justify-between mb-8">
+                        <h1 class="text-4xl font-extrabold text-white">Kullanım Şartları</h1>
+                        <span class="text-sm text-gray-500">Son güncelleme: Nisan 2026</span>
+                    </div>
+                    <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
+
+                        <p>Bu belge, DataGuardVPN ("Hizmet") ile siz ("Kullanıcı") arasındaki kullanım koşullarını düzenleyen bir anlaşmadır. DataGuardVPN uygulamasını yükleyerek veya hizmetimizi kullanarak bu şartları kabul etmiş sayılırsınız. Kabul etmiyorsanız uygulamayı silmeniz ve hesabınızı kapatmanız gerekir.</p>
+
+                        <h2>1. Hizmetin Kapsamı</h2>
+                        <p>DataGuardVPN, sanal özel ağ (VPN) iletişim hizmeti ve buna bağlı özellikler sunan bir uygulamadır. Hizmet; internet trafiğinizi şifrelemek ve gizliliğinizi korumak amacıyla tasarlanmış olup suç işlenmesi için bir araç değildir.</p>
+
+                        <h2>2. Kabul Edilemez Kullanımlar</h2>
+                        <p>Aşağıdaki faaliyetler için hizmetimizin kullanılması kesinlikle yasaktır:</p>
+                        <ul>
+                            <li>İstenmeyen e-posta (spam) gönderimi, açık proxy veya relay taraması</li>
+                            <li>Başka bilgisayarlara veya ağlara saldırı, port tarama, kötü amaçlı yazılım dağıtımı</li>
+                            <li>Kimlik avı (phishing), dolandırıcılık, ağ sabotajı veya benzeri yasadışı faaliyetler</li>
+                            <li>Pop-up reklam yayını veya otomatik bot trafiği oluşturma</li>
+                            <li>Telif haklarını ihlal eden içeriklerin iletimi</li>
+                            <li>Hizmet şartlarımıza aykırı her türlü faaliyet</li>
+                        </ul>
+                        <p>Bu faaliyetlerin tespiti halinde hesabınız önceden bildirim yapılmaksızın askıya alınabilir veya kalıcı olarak kapatılabilir.</p>
+
+                        <h2>3. Hizmet Kalitesi ve Sürekliliği</h2>
+                        <p>Hizmetin sürekli ve kesintisiz olması hedeflenmektedir; ancak bakım, onarım, üçüncü taraf altyapı sorunları, acil durumlar veya kontrolümüz dışındaki etkenler nedeniyle geçici kesintiler yaşanabilir. Ağ hızı ve kalitesi; sunucu yükü, ağ tıkanıklığı, sıkıştırma ve diğer teknik faktörlere bağlı olarak değişkenlik gösterebilir. DataGuardVPN; kesintiler veya performans sorunları nedeniyle iletilemeyen, geciken ya da kayıp yaşanan verilerden sorumlu değildir.</p>
+
+                        <h2>4. Adil Kullanım</h2>
+                        <p>Bant genişliği veya veri kullanımına sabit bir üst sınır uygulanmaz; ancak hizmetin adil kullanımı esastır. Ağı aşırı yükleyecek şekilde otomatik ya da manuel oturumlar oluşturmak, diğer kullanıcıları olumsuz etkileyecek düzeyde bant genişliği tüketmek adil kullanım ihlali sayılır. Bu tür kullanımların tespiti durumunda hizmet geçici olarak askıya alınabilir.</p>
+
+                        <h2>5. Hesap Güvenliği</h2>
+                        <p>Kullanıcılar, hesap kimlik bilgilerinin gizliliğinden ve hesapları üzerinden gerçekleştirilen tüm işlemlerden sorumludur. Güvenlik açıklarından kaynaklanan ya da kasıtsız da olsa oluşan zararlardan kullanıcılar sorumludur.</p>
+
+                        <h2>6. Telif Hakkı (DMCA) Politikası</h2>
+                        <p>DataGuardVPN, geçici dijital ağ iletişimi sağlayıcısı olarak telif hakkı ihlallerini ciddiye alır. Tekrarlayan ihlallerin tespiti durumunda ilgili hesaplar kalıcı olarak kapatılır. VPN bağlantılarının geçici niteliği gereği içeriklerin kaldırılması teknik olarak mümkün olmayabileceğinden ihlalci kişilerin tespit edilmesine yönelik makul çabalar gösterilir.</p>
+
+                        <h2>7. Hizmet Değişiklikleri</h2>
+                        <p>DataGuardVPN, bu kullanım şartlarını önceden bildirim yaparak değiştirme hakkını saklı tutar. Güncelleme tarihinden sonra hizmeti kullanmaya devam etmeniz değiştirilmiş şartları kabul ettiğiniz anlamına gelir.</p>
+
+                        <h2>8. İletişim</h2>
+                        <p>Kullanım şartlarıyla ilgili sorularınız için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
+                    </div>
+                </div>
+
+                <!-- ── GİZLİLİK POLİTİKASI ── -->
+                <div class="tab-content reveal" id="tab-privacy">
+                    <div class="flex items-center justify-between mb-8">
+                        <h1 class="text-4xl font-extrabold text-white">Gizlilik Politikası</h1>
+                        <span class="text-sm text-gray-500">Son güncelleme: Nisan 2026</span>
+                    </div>
+                    <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
+
+                        <p>DataGuardVPN olarak gizlilik ve güvenlik, sunduğumuz hizmetin temelini oluşturmaktadır. Bu belge; hangi kişisel verileri topladığımızı, bu verileri nasıl kullandığımızı, kimlerle paylaştığımızı ve nasıl sakladığımızı açıklamaktadır. Türk kullanıcılar için tam yasal açıklama metni <a href="kvkk.html">KVKK Aydınlatma Metni</a>'nde yer almaktadır.</p>
+
+                        <h2>Temel Taahhütlerimiz</h2>
+                        <ul>
+                            <li><strong>VPN trafik içeriğiniz kaydedilmez.</strong> VPN bağlantısı üzerinden eriştiğiniz web siteleri, uygulamalar veya içerikler hiçbir şekilde depolanmaz veya izlenmez.</li>
+                            <li><strong>Reklam amaçlı veri paylaşımı yapılmaz.</strong> Ücretsiz sürümde de dahil olmak üzere reklam ağlarıyla kişisel veri paylaşımı yapılmamaktadır.</li>
+                            <li><strong>IP adresiniz kalıcı olarak saklanmaz.</strong> Sunucuya bağlanmanız için geçici olarak kullanılır; oturum sona erince tutulmaz.</li>
+                        </ul>
+
+                        <h2>Topladığımız Veriler</h2>
+
+                        <h3>Hesap Bilgileri</h3>
+                        <p>Hesap oluşturursanız: kullanıcı adı, e-posta adresi ve şifrenizin şifrelenmiş hali. Google ile giriş yaparsanız Google'ın sağladığı ad ve e-posta adresi. Misafir girişinde yalnızca cihaz kimliği ve cihaz adı.</p>
+
+                        <h3>Cihaz Bilgileri</h3>
+                        <p>Hizmeti kullandığınız cihaza ait: cihaz adı, cihaz kimliği, işletim sistemi versiyonu ve uygulama versiyonu. Bu bilgiler çoklu cihaz yönetimi ve güvenlik amacıyla tutulur.</p>
+
+                        <h3>Bağlantı Meta Verileri</h3>
+                        <p>Bağlantı başlangıç/bitiş zamanı, bağlandığınız sunucu ve kullanılan protokol (içerik değil, yalnızca meta veri). Bu veriler hizmet kalitesinin izlenmesi ve sorun giderme amacıyla kullanılır.</p>
+
+                        <h3>Abonelik ve Ödeme Bilgileri</h3>
+                        <p>Abonelik planı ve durumu. Ödeme işlemleri Google Play aracılığıyla gerçekleşir; kart bilgileriniz tarafımızca saklanmaz.</p>
+
+                        <h3>Destek Talepleri</h3>
+                        <p>Bizimle iletişime geçtiğinizde ilettiğiniz ad, e-posta ve mesaj içeriği.</p>
+
+                        <h2>Verileri Nasıl Kullanıyoruz?</h2>
+                        <ul>
+                            <li>VPN bağlantı hizmetinin sağlanması ve sürdürülmesi</li>
+                            <li>Hesap yönetimi ve faturalandırma</li>
+                            <li>Teknik destek ve sorun giderme</li>
+                            <li>Hizmet güvenliğinin korunması ve kötüye kullanımın önlenmesi</li>
+                            <li>Hizmet kalitesinin anonim verilerle izlenmesi ve iyileştirilmesi</li>
+                        </ul>
+
+                        <h2>Veri Paylaşımı</h2>
+                        <p>Kişisel verileriniz üçüncü taraflara satılmaz. Yalnızca aşağıdaki durumlarda sınırlı ölçüde paylaşım yapılabilir:</p>
+                        <ul>
+                            <li><strong>Ödeme işlemcileri:</strong> Google Play, ödeme işlemleri için zorunlu bilgileri işler.</li>
+                            <li><strong>Google Sign-In:</strong> Google ile giriş tercih ederseniz Google kimlik doğrulama sürecinde ilgili bilgileri işler.</li>
+                            <li><strong>Yasal zorunluluklar:</strong> Yürürlükteki mevzuat veya yetkili resmi makamların talebi doğrultusunda, yalnızca yasal olarak zorunlu minimum bilgi paylaşılır. VPN trafik içeriği kaydedilmediğinden bu kapsamda paylaşılacak içerik verisi bulunmamaktadır.</li>
+                        </ul>
+
+                        <h2>Veri Saklama Süresi</h2>
+                        <p>Kişisel verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı silmeniz durumunda verileriniz yasal saklama yükümlülükleri saklı kalmak kaydıyla silinir. Bağlantı meta verileri en fazla 90 gün saklanır. VPN trafik içeriği hiçbir zaman kaydedilmediğinden saklama süresi de söz konusu değildir.</p>
+
+                        <h2>Güvenlik</h2>
+                        <p>Verileriniz; endüstri standardı idari, teknik ve fiziksel önlemlerle korunmaktadır. Hesap bilgilerine erişim yalnızca yetkili personelle sınırlıdır. Hiçbir güvenlik sistemi %100 koruma sağlayamaz; bu nedenle güçlü bir parola kullanmanızı ve hesabınızı korumanızı öneririz.</p>
+
+                        <h2>Çerezler ve İzleme Teknolojileri</h2>
+                        <p>DataGuardVPN mobil uygulaması çerez kullanmamaktadır. Web sitemiz yalnızca temel işlevsellik için zorunlu olan teknik çerezleri kullanır; reklam veya davranışsal izleme amacıyla çerez kullanılmaz.</p>
+
+                        <h2>Çocukların Gizliliği</h2>
+                        <p>Hizmetimiz 16 yaşın altındaki bireylere yönelik değildir ve bu kişilerden bilerek kişisel veri toplanmaz. 16 yaş altı bir kullanıcıya ait veri toplandığı fark edilirse ilgili hesap kapatılır ve veriler silinir.</p>
+
+                        <h2>Politika Güncellemeleri</h2>
+                        <p>Bu politika zaman zaman güncellenebilir. Önemli değişiklikler e-posta veya uygulama bildirimi aracılığıyla önceden duyurulur. Güncelleme tarihinden sonra hizmeti kullanmaya devam etmeniz değiştirilmiş politikayı kabul ettiğiniz anlamına gelir.</p>
+
+                        <h2>İletişim</h2>
+                        <p>Gizlilik politikamıza ilişkin sorularınız için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
+                        <p>Türk kullanıcılar için yasal haklarınızın tamamı: <a href="kvkk.html">KVKK Aydınlatma Metni</a></p>
+                    </div>
+                </div>
+
             </div>
         </section>
-
     </main>
 
     <!-- ===== FOOTER ===== -->
@@ -150,41 +255,47 @@
                     <a href="index.html" class="text-gray-400 hover:text-white">Ana Sayfa</a>
                     <a href="about.html" class="text-gray-400 hover:text-white">Hakkımızda</a>
                     <a href="kvkk.html" class="text-gray-400 hover:text-white">KVKK</a>
+                    <a href="consent.html" class="text-gray-400 hover:text-white">Açık Rıza</a>
                     <a href="contact.html" class="text-gray-400 hover:text-white">İletişim</a>
                 </nav>
                 <div class="mt-8 md:mt-0 md:order-1">
-                    <p class="text-center text-base text-gray-400">
-                        &copy; 2025 DataGuardVPN. Tüm hakları saklıdır.
-                    </p>
+                    <p class="text-center text-base text-gray-400">&copy; 2026 DataGuardVPN. Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+            // Mobil menü
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
             });
 
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+            // Sekmeler
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
                 });
-            }, {
-                threshold: 0.1
             });
 
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
+            // URL hash'den sekme aç
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                const targetBtn = document.querySelector(`[data-tab="${hash}"]`);
+                if (targetBtn) targetBtn.click();
+            }
+
+            // Scroll animasyonu
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
 </body>
