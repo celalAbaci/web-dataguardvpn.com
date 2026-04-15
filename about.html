@@ -18,13 +18,22 @@
         .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(10, 15, 31, 0.75); }
         .bg-brand-dark { background-color: #0a0f1f; }
         .bg-brand-card { background-color: #111827; }
-        .prose-content h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
-        .prose-content h3 { font-size: 1rem; font-weight: 600; color: #93c5fd; margin-top: 1.25rem; margin-bottom: 0.5rem; }
-        .prose-content p { color: #d1d5db; line-height: 1.75; margin-bottom: 1rem; }
+        .prose-content h2 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
+        .prose-content h3 { font-size: 0.975rem; font-weight: 600; color: #93c5fd; margin-top: 1.4rem; margin-bottom: 0.4rem; }
+        .prose-content p { color: #d1d5db; line-height: 1.8; margin-bottom: 0.9rem; }
         .prose-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-        .prose-content ul li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.25rem; }
+        .prose-content ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ul li, .prose-content ol li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.3rem; }
         .prose-content strong { color: #f3f4f6; }
         .prose-content a { color: #60a5fa; text-decoration: underline; }
+        .prose-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.875rem; }
+        .prose-content table th { background-color: #1f2937; color: #f3f4f6; font-weight: 600; padding: 0.65rem 0.9rem; text-align: left; border: 1px solid #374151; }
+        .prose-content table td { padding: 0.6rem 0.9rem; border: 1px solid #374151; color: #d1d5db; vertical-align: top; }
+        .prose-content table tr:nth-child(even) td { background-color: #0d1424; }
+        .highlight-box { background-color: #1e3a5f; border: 1px solid #2563eb66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+        .highlight-box p { color: #93c5fd; margin: 0; font-size: 0.9rem; }
+        .warning-box { background-color: #1c1507; border: 1px solid #d9770666; border-radius: 0.75rem; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+        .warning-box p { color: #fcd34d; margin: 0; font-size: 0.875rem; }
         .tab-btn { padding: 0.6rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
         .tab-btn.active { background-color: #2563eb; color: #fff; }
         .tab-btn:not(.active) { background-color: #1f2937; color: #9ca3af; }
@@ -84,21 +93,23 @@
                     <button class="tab-btn" data-tab="privacy">Gizlilik Politikası</button>
                 </div>
 
-                <!-- ── HAKKIMIZDA ── -->
+                <!-- ══════════════════════════════════════════ -->
+                <!-- HAKKIMIZDA                                  -->
+                <!-- ══════════════════════════════════════════ -->
                 <div class="tab-content active reveal" id="tab-about">
                     <h1 class="text-4xl font-extrabold text-white mb-8">Hakkımızda</h1>
                     <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
 
-                        <p>DataGuardVPN, dijital gizliliğin temel bir hak olduğuna inanan bir ekip tarafından geliştirilmiş bir sanal özel ağ (VPN) hizmetidir. Amacımız; her seviyeden kullanıcının kolayca kullanabileceği, güçlü şifreleme ve modern protokollerle desteklenmiş, şeffaf bir gizlilik hizmeti sunmaktır.</p>
+                        <p>DataGuardVPN, dijital gizliliğin temel bir hak olduğuna inanan bir ekip tarafından geliştirilmiş bir sanal özel ağ (VPN) hizmetidir. Amacımız; her seviyeden kullanıcının kolayca kullanabileceği, güçlü şifreleme ve modern protokollerle desteklenmiş, şeffaf ve dürüst bir gizlilik hizmeti sunmaktır.</p>
 
-                        <p>Hizmetimiz; OpenVPN, VLESS+Reality ve Stealth protokollerini desteklemekte olup hem ücretsiz hem de premium abonelik seçenekleriyle sunulmaktadır. Premium kullanıcılar daha fazla sunucu konumuna ve yüksek bant genişliği önceliğine sahip olur.</p>
+                        <p>Hizmetimiz; OpenVPN, VLESS+Reality ve Stealth (Xray) protokollerini desteklemekte olup hem ücretsiz hem de premium abonelik seçenekleriyle sunulmaktadır. Premium kullanıcılar daha fazla sunucu konumuna ve yüksek bant genişliği önceliğine sahip olur.</p>
 
                         <h2>Temel İlkelerimiz</h2>
                         <ul>
-                            <li><strong>Sıfır Trafik Kaydı:</strong> VPN tüneli üzerinden yaptığınız gezinti, eriştiğiniz içerikler veya DNS sorgularınız hiçbir şekilde kaydedilmez veya depolanmaz.</li>
+                            <li><strong>Sıfır Trafik Kaydı:</strong> VPN tüneli üzerinden yaptığınız gezinti, eriştiğiniz web siteleri, uygulamalar, içerikler veya DNS sorgularınız hiçbir şekilde kaydedilmez veya depolanmaz.</li>
                             <li><strong>Şeffaflık:</strong> Hangi verileri topladığımızı ve neden topladığımızı açıkça belirtiyoruz. Sakladığımız veriler yalnızca hizmetin işleyişi için zorunlu olan hesap, cihaz ve bağlantı meta verilerinden ibarettir.</li>
-                            <li><strong>Reklamsız Hizmet:</strong> Ücretsiz sürümümüzde dahi reklam gösterimi veya reklam amaçlı veri paylaşımı yapılmamaktadır.</li>
-                            <li><strong>Güçlü Şifreleme:</strong> Bağlantılarınız endüstri standardı şifreleme protokolleriyle korunur. Trafik içeriğiniz incelenmez.</li>
+                            <li><strong>Reklamsız Hizmet:</strong> Ücretsiz sürümümüzde dahi reklam gösterimi veya reklam amaçlı veri paylaşımı yapılmamaktadır. Reklam ağlarıyla hiçbir veri alışverişi yapılmaz.</li>
+                            <li><strong>Güçlü Şifreleme:</strong> Bağlantılarınız endüstri standardı şifreleme protokolleriyle korunur. Trafik içeriğiniz hiçbir zaman incelenmez.</li>
                         </ul>
 
                         <h2>Desteklenen Protokoller</h2>
@@ -114,7 +125,9 @@
                     </div>
                 </div>
 
-                <!-- ── KULLANIM ŞARTLARI ── -->
+                <!-- ══════════════════════════════════════════ -->
+                <!-- KULLANIM ŞARTLARI                          -->
+                <!-- ══════════════════════════════════════════ -->
                 <div class="tab-content reveal" id="tab-terms">
                     <div class="flex items-center justify-between mb-8">
                         <h1 class="text-4xl font-extrabold text-white">Kullanım Şartları</h1>
@@ -122,44 +135,169 @@
                     </div>
                     <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
 
-                        <p>Bu belge, DataGuardVPN ("Hizmet") ile siz ("Kullanıcı") arasındaki kullanım koşullarını düzenleyen bir anlaşmadır. DataGuardVPN uygulamasını yükleyerek veya hizmetimizi kullanarak bu şartları kabul etmiş sayılırsınız. Kabul etmiyorsanız uygulamayı silmeniz ve hesabınızı kapatmanız gerekir.</p>
+                        <p>Bu Kullanım Şartları Sözleşmesi ("Sözleşme"), DataGuardVPN ("Şirket", "biz", "bizim") ile DataGuardVPN uygulamasını ve ilgili hizmetleri kullanan kişi ("Kullanıcı", "siz") arasında bağlayıcı bir hukuki sözleşme niteliğindedir. DataGuardVPN uygulamasını indirerek, yükleyerek, çalıştırarak veya hizmetimizi herhangi bir biçimde kullanarak bu Sözleşme'nin tamamına uyacağınızı kabul etmiş sayılırsınız.</p>
 
-                        <h2>1. Hizmetin Kapsamı</h2>
-                        <p>DataGuardVPN, sanal özel ağ (VPN) iletişim hizmeti ve buna bağlı özellikler sunan bir uygulamadır. Hizmet; internet trafiğinizi şifrelemek ve gizliliğinizi korumak amacıyla tasarlanmış olup suç işlenmesi için bir araç değildir.</p>
+                        <p>Bu şartları kabul etmiyorsanız lütfen uygulamayı silip hesabınızı kapatın ve hizmetimizi kullanmayı durdurun.</p>
 
-                        <h2>2. Kabul Edilemez Kullanımlar</h2>
-                        <p>Aşağıdaki faaliyetler için hizmetimizin kullanılması kesinlikle yasaktır:</p>
+                        <h2>1. Hizmetin Tanımı ve Kapsamı</h2>
+                        <p>DataGuardVPN; internet trafiğinizi şifreleyen, IP adresinizi maskeleyerek çevrimiçi gizliliğinizi artıran ve güvensiz ağlardaki iletişimlerinizi koruyan bir sanal özel ağ (VPN) hizmetidir. Hizmetimiz; <strong>OpenVPN</strong>, <strong>VLESS+Reality</strong> ve <strong>Stealth (Xray)</strong> protokollerini desteklemekte olup ücretsiz ve premium olmak üzere iki katmanda sunulmaktadır.</p>
+
+                        <p>Ücretsiz plan kullanıcıları sınırlı sunucu konumlarına ve standart bant genişliğine erişebilir. Premium abonelik; daha fazla sunucu seçeneği, daha yüksek bant genişliği önceliği ve gelişmiş protokol desteği sunar.</p>
+
+                        <div class="highlight-box">
+                            <p><i class="ph-bold ph-info mr-2"></i> DataGuardVPN bir iletişim aracı değil, bir gizlilik aracıdır. Hizmet; VPN trafiği üzerinden gerçekleştirilen eylemlerin sorumluluğunu üstlenmez.</p>
+                        </div>
+
+                        <h2>2. Hesap Oluşturma ve Gereksinimler</h2>
+
+                        <h3>2.1 Yaş Şartı</h3>
+                        <p>DataGuardVPN hizmetini kullanabilmek için <strong>16 yaşını doldurmuş</strong> olmanız gerekmektedir. 16 yaşın altındaki kişilerden bilerek hesap açılmaz. Bu yaşın altındaki bir kullanıcıya ait hesap tespit edildiğinde hesap derhal kapatılır.</p>
+
+                        <h3>2.2 Kayıt Seçenekleri</h3>
+                        <p>Hizmete üç farklı biçimde kayıt olunabilir:</p>
                         <ul>
-                            <li>İstenmeyen e-posta (spam) gönderimi, açık proxy veya relay taraması</li>
-                            <li>Başka bilgisayarlara veya ağlara saldırı, port tarama, kötü amaçlı yazılım dağıtımı</li>
-                            <li>Kimlik avı (phishing), dolandırıcılık, ağ sabotajı veya benzeri yasadışı faaliyetler</li>
-                            <li>Pop-up reklam yayını veya otomatik bot trafiği oluşturma</li>
-                            <li>Telif haklarını ihlal eden içeriklerin iletimi</li>
-                            <li>Hizmet şartlarımıza aykırı her türlü faaliyet</li>
+                            <li><strong>E-posta ile kayıt:</strong> Geçerli bir e-posta adresi ve parola oluşturularak hesap açılır.</li>
+                            <li><strong>Google ile giriş:</strong> Google hesabınızla tek tıkla kimlik doğrulaması yapılabilir. Bu durumda Google, adınızı ve e-posta adresinizi bizimle paylaşır.</li>
+                            <li><strong>Misafir girişi:</strong> Hesap oluşturmadan yalnızca cihaz kimliğiyle giriş yapılabilir. Misafir hesapları bazı özelliklerden yararlanamaz.</li>
                         </ul>
-                        <p>Bu faaliyetlerin tespiti halinde hesabınız önceden bildirim yapılmaksızın askıya alınabilir veya kalıcı olarak kapatılabilir.</p>
 
-                        <h2>3. Hizmet Kalitesi ve Sürekliliği</h2>
-                        <p>Hizmetin sürekli ve kesintisiz olması hedeflenmektedir; ancak bakım, onarım, üçüncü taraf altyapı sorunları, acil durumlar veya kontrolümüz dışındaki etkenler nedeniyle geçici kesintiler yaşanabilir. Ağ hızı ve kalitesi; sunucu yükü, ağ tıkanıklığı, sıkıştırma ve diğer teknik faktörlere bağlı olarak değişkenlik gösterebilir. DataGuardVPN; kesintiler veya performans sorunları nedeniyle iletilemeyen, geciken ya da kayıp yaşanan verilerden sorumlu değildir.</p>
+                        <h3>2.3 Hesap Bilgilerinin Doğruluğu</h3>
+                        <p>Kayıt sırasında verdiğiniz bilgilerin doğru, güncel ve eksiksiz olması zorunludur. Yanlış bilgiyle açılan hesapların askıya alınma veya kapatılma hakkını saklı tutarız. E-posta adresinizi değiştirmeniz durumunda hesap ayarlarınızdan güncelleme yapmanız gerekir.</p>
 
-                        <h2>4. Adil Kullanım</h2>
-                        <p>Bant genişliği veya veri kullanımına sabit bir üst sınır uygulanmaz; ancak hizmetin adil kullanımı esastır. Ağı aşırı yükleyecek şekilde otomatik ya da manuel oturumlar oluşturmak, diğer kullanıcıları olumsuz etkileyecek düzeyde bant genişliği tüketmek adil kullanım ihlali sayılır. Bu tür kullanımların tespiti durumunda hizmet geçici olarak askıya alınabilir.</p>
+                        <h3>2.4 Hesap Güvenliği</h3>
+                        <p>Hesabınıza ait kullanıcı adı ve parolanın gizliliğinin korunması tamamen sizin sorumluluğunuzdadır. Hesabınız üzerinden gerçekleştirilen tüm işlemlerden — bu işlemleri bizzat yapmamış olsanız dahi — siz sorumlusunuz. Hesabınızın yetkisiz kullanıldığını fark ettiğinizde derhal <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine bildirin. Parolanızı; sözlük kelimeleri veya kolay tahmin edilebilir kombinasyonlar yerine büyük/küçük harf, rakam ve özel karakter içeren güçlü bir parola olarak belirleyin.</p>
 
-                        <h2>5. Hesap Güvenliği</h2>
-                        <p>Kullanıcılar, hesap kimlik bilgilerinin gizliliğinden ve hesapları üzerinden gerçekleştirilen tüm işlemlerden sorumludur. Güvenlik açıklarından kaynaklanan ya da kasıtsız da olsa oluşan zararlardan kullanıcılar sorumludur.</p>
+                        <h2>3. Kabul Edilemez Kullanımlar</h2>
+                        <p>DataGuardVPN, meşru gizlilik ve güvenlik amaçlarına hizmet eden bir araçtır. Aşağıdaki faaliyetler için kullanılması kesinlikle yasaktır:</p>
 
-                        <h2>6. Telif Hakkı (DMCA) Politikası</h2>
-                        <p>DataGuardVPN, geçici dijital ağ iletişimi sağlayıcısı olarak telif hakkı ihlallerini ciddiye alır. Tekrarlayan ihlallerin tespiti durumunda ilgili hesaplar kalıcı olarak kapatılır. VPN bağlantılarının geçici niteliği gereği içeriklerin kaldırılması teknik olarak mümkün olmayabileceğinden ihlalci kişilerin tespit edilmesine yönelik makul çabalar gösterilir.</p>
+                        <h3>3.1 Ağ Saldırıları ve Kötüye Kullanım</h3>
+                        <ul>
+                            <li>Port tarama, güvenlik açığı araştırması veya ağ keşfi amacıyla otomatik ya da manuel araçların kullanılması</li>
+                            <li>Hizmet reddi (DoS/DDoS) saldırıları düzenlenmesi veya bu tür saldırılara aracılık edilmesi</li>
+                            <li>Yetkisiz sistemlere erişim sağlanması, şifre kırma veya brute-force saldırıları gerçekleştirilmesi</li>
+                            <li>Zararlı yazılım, virüs, trojan, casus yazılım veya diğer kötü amaçlı kodların dağıtılması</li>
+                            <li>Açık proxy veya relay tarama faaliyetleri yürütülmesi</li>
+                            <li>Botnet oluşturulması veya bunlara katılım sağlanması</li>
+                        </ul>
 
-                        <h2>7. Hizmet Değişiklikleri</h2>
-                        <p>DataGuardVPN, bu kullanım şartlarını önceden bildirim yaparak değiştirme hakkını saklı tutar. Güncelleme tarihinden sonra hizmeti kullanmaya devam etmeniz değiştirilmiş şartları kabul ettiğiniz anlamına gelir.</p>
+                        <h3>3.2 Yasadışı İçerik ve Faaliyetler</h3>
+                        <ul>
+                            <li>Yürürlükteki herhangi bir ulusal veya uluslararası yasayı ihlal eden içeriklerin iletilmesi veya depolanması</li>
+                            <li>Çocuk istismarı içerikleri de dahil olmak üzere her türlü yasa dışı içeriğe erişilmesi veya bu içeriklerin dağıtılması</li>
+                            <li>Kimlik avı (phishing), dolandırıcılık veya sosyal mühendislik saldırıları düzenlenmesi</li>
+                            <li>Kara para aklaması, vergi kaçakçılığı veya diğer mali suçların işlenmesi</li>
+                            <li>Terörü destekleyen, şiddeti kışkırtan veya nefret söylemi içeren içeriklerin yayılması</li>
+                            <li>Yetkisiz kişilerin kişisel bilgilerinin toplanması, satılması veya paylaşılması</li>
+                        </ul>
 
-                        <h2>8. İletişim</h2>
-                        <p>Kullanım şartlarıyla ilgili sorularınız için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
+                        <h3>3.3 İstenmeyen İletişim ve Spam</h3>
+                        <ul>
+                            <li>Alıcıların rızası olmaksızın toplu e-posta, SMS veya mesaj gönderilmesi (spam)</li>
+                            <li>Reklam botu trafiği veya otomatik tıklama dolandırıcılığı faaliyetleri yürütülmesi</li>
+                            <li>Pop-up reklam yayınlanması veya yanıltıcı yönlendirmeler oluşturulması</li>
+                        </ul>
+
+                        <h3>3.4 Fikri Mülkiyet İhlalleri</h3>
+                        <ul>
+                            <li>Telif hakkı, patent, marka veya ticari sır haklarını ihlal eden içeriklerin aktarılması</li>
+                            <li>Lisanssız yazılım, film, müzik veya diğer korunan eserlerin dağıtılması</li>
+                        </ul>
+
+                        <h3>3.5 Hizmetin Kötüye Kullanımı</h3>
+                        <ul>
+                            <li>Hizmetimizin altyapısını bozmaya, performansını düşürmeye veya güvenliğini tehlikeye atmaya yönelik her türlü girişim</li>
+                            <li>Birden fazla hesap oluşturarak ücretsiz plan limitlerinin aşılmaya çalışılması</li>
+                            <li>DataGuardVPN VPN sunucularından diğer DataGuardVPN VPN sunucularına bağlanılması</li>
+                            <li>Hesap kimlik bilgilerinin üçüncü taraflara devredilmesi veya satılması</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <p><i class="ph-bold ph-warning mr-2"></i> Bu maddeyi ihlal eden kullanımların tespiti durumunda hesabınız <strong>önceden bildirim yapılmaksızın</strong> kalıcı olarak kapatılabilir ve varsa aktif aboneliğiniz iade yapılmaksızın iptal edilebilir. Yasal yaptırım gerektiren durumlarda ilgili makamlarla iş birliği yapılır.</p>
+                        </div>
+
+                        <h2>4. Abonelik, Ödeme ve İptal</h2>
+
+                        <h3>4.1 Abonelik Planları</h3>
+                        <p>DataGuardVPN; ücretsiz ve çeşitli premium seçenekleri kapsayan farklı abonelik planları sunmaktadır. Güncel plan detayları ve fiyatlandırma uygulama içinde görüntülenebilir. Fiyatlar önceden duyurulmak kaydıyla değiştirilebilir.</p>
+
+                        <h3>4.2 Ödeme Yöntemi</h3>
+                        <p>Ödeme işlemleri <strong>Google Play</strong> altyapısı üzerinden gerçekleştirilmektedir. Kredi kartı, banka kartı veya diğer ödeme yöntemi bilgileriniz DataGuardVPN tarafından saklanmaz; bu bilgiler yalnızca Google'ın güvenli ödeme sistemi tarafından işlenir. Ödeme sorunları için Google Play destek kanallarına başvurmanız gerekmektedir.</p>
+
+                        <h3>4.3 Otomatik Yenileme</h3>
+                        <p>Premium abonelikler, kullanıcı tarafından iptal edilmediği sürece seçilen periyot (aylık veya yıllık) sonunda Google Play üzerinden otomatik olarak yenilenir. Yenileme, dönem bitişinden en az 24 saat önce iptal edilmezse gerçekleşir. Yenileme ücreti, dönem başlangıcından 24 saat öncesine kadar Google hesabınızdan tahsil edilir.</p>
+
+                        <h3>4.4 İptal</h3>
+                        <p>Aboneliğinizi istediğiniz zaman Google Play üzerinden iptal edebilirsiniz. İptal işlemi mevcut ödeme döneminin sonunda geçerli olur; dönem içinde yapılan iptal sonucunda kalan süre için iade yapılmaz. İptal sonrasında ücretsiz plan kapsamında hizmetten yararlanmaya devam edebilirsiniz.</p>
+
+                        <h3>4.5 İadeler</h3>
+                        <p>Ödeme anlaşmazlıkları ve iade talepleri Google Play'in iade politikası çerçevesinde değerlendirilir. Ayrıntılı bilgi için Google Play destek sayfasına başvurunuz. Hizmet kullanımından kaynaklanan iade talepleri için <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> ile iletişime geçebilirsiniz; talepler bireysel olarak incelenir.</p>
+
+                        <h2>5. Hizmet Kalitesi ve Sürekliliği</h2>
+
+                        <h3>5.1 Hizmet Taahhüdü</h3>
+                        <p>DataGuardVPN, hizmetin kesintisiz ve yüksek kalitede sunulması için çalışır. Bununla birlikte aşağıdaki durumlarda geçici kesintiler yaşanabilir:</p>
+                        <ul>
+                            <li>Planlı bakım ve sistem güncellemeleri (önceden duyurulur)</li>
+                            <li>Acil güvenlik yamaları veya altyapı sorunları</li>
+                            <li>Doğal afetler, salgın hastalıklar veya diğer mücbir sebepler</li>
+                            <li>Üçüncü taraf altyapı sağlayıcılarından kaynaklanan sorunlar</li>
+                            <li>İnternet servis sağlayıcılarından veya devlet müdahalelerinden kaynaklanan kısıtlamalar</li>
+                        </ul>
+
+                        <h3>5.2 Ağ Performansı</h3>
+                        <p>Bağlantı hızı ve kalitesi; kullanıcının konumu, seçilen sunucu, yerel İSS altyapısı, ağ tıkanıklığı ve seçilen protokol gibi faktörlere bağlı olarak değişkenlik gösterebilir. DataGuardVPN; belirli bir bant genişliği veya gecikme süresi garantisi vermemektedir. Performans sorunları yaşandığında farklı bir sunucu veya protokol denemenizi öneririz.</p>
+
+                        <h3>5.3 Sorumluluk Reddi</h3>
+                        <p>DataGuardVPN; geçici hizmet kesintileri, VPN bağlantısı üzerinden erişilen içeriklerden kaynaklanan zararlar, üçüncü taraf hizmetlerinin kullanılamaması veya yetersiz performansı nedeniyle ortaya çıkan doğrudan ya da dolaylı zararlardan sorumlu tutulamaz.</p>
+
+                        <h2>6. Adil Kullanım Politikası</h2>
+                        <p>Bant genişliği veya aylık veri kullanımı için sabit bir üst sınır belirlenmemiş olsa da hizmetin tüm kullanıcılara adil biçimde sunulabilmesi için aşağıdaki kullanımlar adil kullanım ihlali sayılır:</p>
+                        <ul>
+                            <li>Diğer kullanıcıların deneyimini olumsuz etkileyecek düzeyde sürekli ve aşırı bant genişliği tüketimi</li>
+                            <li>Ağ kaynaklarını tekeline almak amacıyla çok sayıda eş zamanlı oturum oluşturulması</li>
+                            <li>Hizmetin altyapısını zorlamak amacıyla otomatik scriptler veya araçlarla yapay trafik üretilmesi</li>
+                            <li>Ticari amaçlı bant genişliği yeniden satışı veya tünel aktarımı</li>
+                        </ul>
+                        <p>Adil kullanım ihlali tespit edildiğinde kullanıcı önce uyarılır; durumun devam etmesi halinde bant genişliği kısıtlaması uygulanabilir veya hesap geçici olarak askıya alınabilir.</p>
+
+                        <h2>7. Telif Hakkı (DMCA) Politikası</h2>
+                        <p>DataGuardVPN, dijital ağ üzerinden yalnızca geçici iletim hizmeti sağlayan bir aracı konumundadır ve bu niteliğiyle ilgili yasal düzenlemeler kapsamında korumadan yararlanmaktadır.</p>
+                        <p>VPN bağlantılarının anlık ve şifreli yapısı gereği iletilen içeriklerin teknik olarak kaldırılması ya da engellenmesi mümkün değildir. Bu nedenle telif hakkı ihlali iddialarında hizmetimizle ilgili doğrudan işlem yapılamaz; bunun yerine içerik barındıran sunuculara veya ilgili içerik sağlayıcılara başvurulması önerilir.</p>
+                        <p>Bununla birlikte, tekrarlayan ihlaller nedeniyle bildirilen kullanıcı hesapları incelemeye alınır ve gerekli görülmesi halinde kapatılır. Telif hakkı ihlali bildirimleri için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
+
+                        <h2>8. Fikri Mülkiyet</h2>
+                        <p>DataGuardVPN uygulaması, web sitesi, logo, marka adı ve diğer tüm içerikler Şirket'e ait fikri mülkiyet haklarıyla korunmaktadır. Kullanıcılara yalnızca bu Sözleşme kapsamında kişisel ve ticari olmayan kullanım için sınırlı, devredilemez, alt lisanslanamaz bir lisans verilmektedir. Uygulamayı kopyalamak, değiştirmek, tersine mühendislik uygulamak, dağıtmak veya türev eserler oluşturmak açıkça yasaktır.</p>
+
+                        <h2>9. Sorumluluğun Sınırlandırılması</h2>
+                        <p>Yürürlükteki mevzuatın izin verdiği azami ölçüde DataGuardVPN; gelir kaybı, veri kaybı, itibar kaybı veya dolaylı, tesadüfi, özel ya da sonuç olarak ortaya çıkan zararlardan sorumlu tutulamaz. Herhangi bir talep kapsamında Şirket'in azami sorumluluğu, söz konusu olaydan önceki üç aylık dönemde kullanıcının ödediği abonelik ücretiyle sınırlıdır.</p>
+
+                        <h2>10. Tazminat</h2>
+                        <p>Bu Sözleşme'nin ihlali, hizmetin yasaya aykırı kullanımı veya üçüncü tarafların haklarının çiğnenmesi nedeniyle DataGuardVPN, çalışanları veya iş ortakları aleyhine açılan her türlü talep, dava veya masrafa karşı Şirketi savunmayı ve tazmin etmeyi kabul edersiniz.</p>
+
+                        <h2>11. Şartlarda Değişiklik</h2>
+                        <p>DataGuardVPN, bu Kullanım Şartları'nı önceden bildirerek değiştirme hakkını saklı tutar. Önemli değişiklikler uygulama bildirimi veya e-posta yoluyla en az 7 gün öncesinden duyurulur. Değişikliklerin yürürlüğe girmesinden sonra hizmeti kullanmaya devam etmeniz güncel şartları kabul ettiğiniz anlamına gelir. Değişiklikleri kabul etmiyorsanız aboneliğinizi iptal edip hesabınızı kapatmanız gerekir.</p>
+
+                        <h2>12. Hesabın Askıya Alınması veya Kapatılması</h2>
+                        <p>DataGuardVPN, makul gerekçe göstermeksizin tek taraflı olarak herhangi bir kullanıcı hesabını askıya alma veya kalıcı olarak kapatma hakkını saklı tutar. Bu durum özellikle şu hallerde geçerlidir:</p>
+                        <ul>
+                            <li>Bu Sözleşme'nin ihlal edilmesi</li>
+                            <li>Yasadışı faaliyetlerin yürütülmesi</li>
+                            <li>Diğer kullanıcılara veya hizmet altyapısına zarar verilmesi</li>
+                            <li>Şirket'in ticari faaliyetlerine engel olunması</li>
+                        </ul>
+                        <p>Hesabın haksız gerekçeyle kapatıldığını düşünüyorsanız <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine itiraz başvurusunda bulunabilirsiniz.</p>
+
+                        <h2>13. Uygulanacak Hukuk ve Yetki</h2>
+                        <p>Bu Sözleşme; Türkiye Cumhuriyeti mevzuatı kapsamında yorumlanır ve uygulanır. Bu Sözleşme'den kaynaklanan her türlü uyuşmazlıkta Türkiye mahkemeleri yetkilidir.</p>
+
+                        <h2>14. İletişim</h2>
+                        <p>Kullanım şartlarıyla ilgili soru ve talepleriniz için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
                     </div>
                 </div>
 
-                <!-- ── GİZLİLİK POLİTİKASI ── -->
+                <!-- ══════════════════════════════════════════ -->
+                <!-- GİZLİLİK POLİTİKASI                        -->
+                <!-- ══════════════════════════════════════════ -->
                 <div class="tab-content reveal" id="tab-privacy">
                     <div class="flex items-center justify-between mb-8">
                         <h1 class="text-4xl font-extrabold text-white">Gizlilik Politikası</h1>
@@ -167,67 +305,230 @@
                     </div>
                     <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
 
-                        <p>DataGuardVPN olarak gizlilik ve güvenlik, sunduğumuz hizmetin temelini oluşturmaktadır. Bu belge; hangi kişisel verileri topladığımızı, bu verileri nasıl kullandığımızı, kimlerle paylaştığımızı ve nasıl sakladığımızı açıklamaktadır. Türk kullanıcılar için tam yasal açıklama metni <a href="kvkk.html">KVKK Aydınlatma Metni</a>'nde yer almaktadır.</p>
+                        <p>DataGuardVPN olarak, dijital gizliliği bir hizmet özelliği olarak değil, temel bir hak olarak kabul ediyoruz. Bu Gizlilik Politikası; DataGuardVPN uygulaması ve web sitesini kullandığınızda hangi kişisel verileri topladığımızı, bu verileri nasıl kullandığımızı, kimlerle paylaştığımızı, nasıl sakladığımızı ve haklarınızı açıklamaktadır.</p>
 
-                        <h2>Temel Taahhütlerimiz</h2>
+                        <p>Türk kullanıcılar için 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamındaki tüm yasal aydınlatma yükümlülüklerimiz <a href="kvkk.html">KVKK Aydınlatma Metni</a>'nde ayrıntılı biçimde yerine getirilmektedir.</p>
+
+                        <div class="highlight-box">
+                            <p><i class="ph-bold ph-shield-check mr-2"></i> <strong>En önemli taahhüdümüz:</strong> VPN tüneli üzerinden yaptığınız gezinti, eriştiğiniz içerikler, DNS sorgularınız veya IP adresiniz <strong>hiçbir zaman kaydedilmez veya saklanmaz.</strong></p>
+                        </div>
+
+                        <h2>1. Veri Sorumlusu</h2>
+                        <p>Kişisel verilerinizin işlenmesinden sorumlu taraf DataGuardVPN'dir. İletişim bilgileri:</p>
                         <ul>
-                            <li><strong>VPN trafik içeriğiniz kaydedilmez.</strong> VPN bağlantısı üzerinden eriştiğiniz web siteleri, uygulamalar veya içerikler hiçbir şekilde depolanmaz veya izlenmez.</li>
-                            <li><strong>Reklam amaçlı veri paylaşımı yapılmaz.</strong> Ücretsiz sürümde de dahil olmak üzere reklam ağlarıyla kişisel veri paylaşımı yapılmamaktadır.</li>
-                            <li><strong>IP adresiniz kalıcı olarak saklanmaz.</strong> Sunucuya bağlanmanız için geçici olarak kullanılır; oturum sona erince tutulmaz.</li>
+                            <li>E-posta: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></li>
+                            <li>Web: <a href="https://dataguardvpn.com">dataguardvpn.com</a></li>
                         </ul>
 
-                        <h2>Topladığımız Veriler</h2>
+                        <h2>2. Topladığımız Veriler ve Toplama Amacı</h2>
 
-                        <h3>Hesap Bilgileri</h3>
-                        <p>Hesap oluşturursanız: kullanıcı adı, e-posta adresi ve şifrenizin şifrelenmiş hali. Google ile giriş yaparsanız Google'ın sağladığı ad ve e-posta adresi. Misafir girişinde yalnızca cihaz kimliği ve cihaz adı.</p>
-
-                        <h3>Cihaz Bilgileri</h3>
-                        <p>Hizmeti kullandığınız cihaza ait: cihaz adı, cihaz kimliği, işletim sistemi versiyonu ve uygulama versiyonu. Bu bilgiler çoklu cihaz yönetimi ve güvenlik amacıyla tutulur.</p>
-
-                        <h3>Bağlantı Meta Verileri</h3>
-                        <p>Bağlantı başlangıç/bitiş zamanı, bağlandığınız sunucu ve kullanılan protokol (içerik değil, yalnızca meta veri). Bu veriler hizmet kalitesinin izlenmesi ve sorun giderme amacıyla kullanılır.</p>
-
-                        <h3>Abonelik ve Ödeme Bilgileri</h3>
-                        <p>Abonelik planı ve durumu. Ödeme işlemleri Google Play aracılığıyla gerçekleşir; kart bilgileriniz tarafımızca saklanmaz.</p>
-
-                        <h3>Destek Talepleri</h3>
-                        <p>Bizimle iletişime geçtiğinizde ilettiğiniz ad, e-posta ve mesaj içeriği.</p>
-
-                        <h2>Verileri Nasıl Kullanıyoruz?</h2>
+                        <h3>2.1 Hesap Bilgileri</h3>
+                        <p>Hesap oluşturduğunuzda aşağıdaki bilgiler toplanır:</p>
                         <ul>
-                            <li>VPN bağlantı hizmetinin sağlanması ve sürdürülmesi</li>
-                            <li>Hesap yönetimi ve faturalandırma</li>
-                            <li>Teknik destek ve sorun giderme</li>
-                            <li>Hizmet güvenliğinin korunması ve kötüye kullanımın önlenmesi</li>
-                            <li>Hizmet kalitesinin anonim verilerle izlenmesi ve iyileştirilmesi</li>
+                            <li><strong>E-posta ile kayıt:</strong> E-posta adresi ve parolanızın şifrelenmiş (hash'lenmiş) hali. Parola düz metin olarak hiçbir zaman saklanmaz.</li>
+                            <li><strong>Google ile giriş:</strong> Google OAuth2 akışı aracılığıyla Google'ın sağladığı görünen ad ve e-posta adresi. Google'ın paylaştığı veriler Google'ın kendi gizlilik politikasına tabidir.</li>
+                            <li><strong>Misafir girişi:</strong> Kayıt gerektirmez; yalnızca cihaz kimliği ve cihaz adı alınır.</li>
+                        </ul>
+                        <p><strong>Toplanmayan bilgiler:</strong> Gerçek adınız, fiziksel adresiniz, telefon numaranız veya doğum tarihiniz talep edilmez.</p>
+
+                        <h3>2.2 Cihaz Bilgileri</h3>
+                        <p>Hizmetin güvenli ve çoklu cihaz desteğiyle çalışabilmesi için aşağıdaki cihaz bilgileri tutulur:</p>
+                        <ul>
+                            <li>Cihaz adı (örn. "Mia'nın Galaxy S23")</li>
+                            <li>Cihaz kimliği (uygulamanın ürettiği anonim tanımlayıcı)</li>
+                            <li>İşletim sistemi versiyonu</li>
+                            <li>Uygulama versiyonu</li>
+                        </ul>
+                        <p>Bu bilgiler; yetkisiz cihaz erişiminin engellenmesi, çoklu cihaz yönetimi ve uyumluluk sorunlarının giderilmesi amacıyla kullanılır. Cihaz donanım seri numarası veya IMEI gibi değişmez donanım tanımlayıcıları toplanmaz.</p>
+
+                        <h3>2.3 VPN Bağlantı Meta Verileri</h3>
+                        <p>Her VPN oturumuna ait aşağıdaki meta veriler kaydedilir:</p>
+                        <ul>
+                            <li>Bağlantı başlangıç ve bitiş zamanı</li>
+                            <li>Bağlanılan VPN sunucusu</li>
+                            <li>Kullanılan VPN protokolü (OpenVPN, VLESS vb.)</li>
+                        </ul>
+                        <p>Bu meta veriler; abonelik limitlerinin denetlenmesi (eş zamanlı bağlantı sayısı), teknik sorunların giderilmesi ve hizmet kalitesinin izlenmesi amacıyla 90 gün süreyle saklanır.</p>
+
+                        <div class="highlight-box">
+                            <p><i class="ph-bold ph-eye-slash mr-2"></i> <strong>Kaydedilmeyen veriler:</strong> Ziyaret ettiğiniz web siteleri, uygulamalar, DNS sorguları, içerik verileri, bant genişliği tüketimi veya gerçek IP adresiniz hiçbir şekilde kaydedilmez.</p>
+                        </div>
+
+                        <h3>2.4 Abonelik ve Ödeme Bilgileri</h3>
+                        <p>Aboneliğinizin yönetimi amacıyla aşağıdaki bilgiler saklanır:</p>
+                        <ul>
+                            <li>Abonelik planı ve durumu (aktif, süresi dolmuş, iptal edilmiş)</li>
+                            <li>Abonelik başlangıç ve bitiş tarihleri</li>
+                            <li>Google Play tarafından sağlanan satın alma onay kodu (purchase token)</li>
+                        </ul>
+                        <p>Kart numarası, CVV veya banka hesap bilgileri gibi ödeme aracı verileri DataGuardVPN sunucularında hiçbir zaman saklanmaz. Tüm ödeme işlemleri Google Play'in güvenli altyapısı üzerinden gerçekleştirilir ve bu veriler Google'ın gizlilik politikasına tabidir.</p>
+
+                        <h3>2.5 Destek ve İletişim Verileri</h3>
+                        <p>Bizimle e-posta veya uygulama içi destek formu aracılığıyla iletişime geçtiğinizde ilettiğiniz ad (varsa), e-posta adresi ve mesaj içeriği saklanır. Bu veriler yalnızca talebinize yanıt vermek amacıyla kullanılır ve aktif destek sürecinin tamamlanmasından sonra 1 yıl içinde silinir.</p>
+
+                        <h3>2.6 Açık Rızaya Dayalı İsteğe Bağlı Veriler</h3>
+                        <p>Aşağıdaki veri işleme faaliyetleri yalnızca <a href="consent.html">Açık Rıza Metni</a> kapsamında onay vermeniz halinde gerçekleştirilir:</p>
+                        <ul>
+                            <li><strong>Pazarlama iletişimi:</strong> Kampanya ve güncelleme bildirimleri için e-posta adresi</li>
+                            <li><strong>Kullanıcı araştırmaları:</strong> Anket daveti gönderilmesi</li>
+                            <li><strong>Anonim kullanım analitiği:</strong> Hangi özelliklerin kullanıldığı, bağlantı başarı oranları gibi bireysel kullanıcıyla ilişkilendirilemeyen veriler</li>
+                        </ul>
+                        <p>Bu onayları istediğiniz zaman geri çekebilirsiniz; geri çekmeniz hizmet kullanımınızı etkilemez.</p>
+
+                        <h2>3. Toplamadığımız Veriler</h2>
+                        <p>Şeffaflık adına, VPN hizmetleri bağlamında özellikle belirtmek istediğimiz veriler şunlardır:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Veri Türü</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ziyaret edilen web siteleri / URL'ler</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>DNS sorguları</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>VPN üzerinden iletilen içerik verisi</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerçek (kaynak) IP adresi — kalıcı olarak</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>Bant genişliği tüketim miktarı</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>Uygulama kullanım geçmişi</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>Coğrafi konum (GPS)</td>
+                                    <td>Toplanmıyor</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerçek ad, adres, telefon numarası</td>
+                                    <td>Talep edilmiyor</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>4. Verilerin Kullanım Amaçları</h2>
+                        <p>Topladığımız veriler yalnızca aşağıdaki amaçlarla kullanılmaktadır:</p>
+                        <ul>
+                            <li>VPN bağlantı hizmetinin sağlanması, sürdürülmesi ve iyileştirilmesi</li>
+                            <li>Hesap yönetimi, kimlik doğrulama ve oturum güvenliğinin sağlanması</li>
+                            <li>Abonelik durumunun doğrulanması ve faturalandırma işlemlerinin yürütülmesi</li>
+                            <li>Teknik destek taleplerinin yanıtlanması ve sorunların giderilmesi</li>
+                            <li>Hizmetin güvenliğinin korunması, kötüye kullanımın ve dolandırıcılığın önlenmesi</li>
+                            <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+                            <li>Açık rıza verilmesi durumunda: anonim kullanım analitiği ve pazarlama iletişimi</li>
                         </ul>
 
-                        <h2>Veri Paylaşımı</h2>
-                        <p>Kişisel verileriniz üçüncü taraflara satılmaz. Yalnızca aşağıdaki durumlarda sınırlı ölçüde paylaşım yapılabilir:</p>
+                        <h2>5. Veri Paylaşımı ve Üçüncü Taraflar</h2>
+                        <p>Kişisel verileriniz hiçbir şekilde <strong>üçüncü taraflara satılmaz, kiralanmaz veya ticari amaçla paylaşılmaz.</strong> Yalnızca aşağıdaki sınırlı durumlarda ve zorunlu olduğu ölçüde paylaşım yapılabilir:</p>
+
+                        <h3>5.1 Google Play (Ödeme İşlemcisi)</h3>
+                        <p>Premium abonelik satın alımlarında Google Play, ödeme bilgilerini kendi güvenli altyapısında işler. Google Play'e yalnızca işlemin doğrulanması için gereken minimum bilgi iletilir; ödeme aracı verileri DataGuardVPN'e aktarılmaz. Google'ın gizlilik politikası için: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+
+                        <h3>5.2 Google Sign-In (Kimlik Doğrulama)</h3>
+                        <p>Google hesabınızla giriş yapmayı tercih etmeniz durumunda Google OAuth2 akışı devreye girer. Bu süreçte Google; adınızı ve e-posta adresinizi DataGuardVPN ile paylaşır. Google ile giriş tamamen isteğe bağlıdır; e-posta veya misafir girişi alternatifleri mevcuttur.</p>
+
+                        <h3>5.3 Hukuki Zorunluluklar</h3>
+                        <p>Yetkili Türk mahkemelerinin veya resmi makamların yasal çerçevede yaptığı taleplere yanıt verilmesi gerekebilir. Bu tür durumlarda yalnızca yasal olarak zorunlu olan minimum veri paylaşılır. Önemle belirtmek gerekir ki: <strong>VPN trafik içeriği, ziyaret edilen siteler veya DNS sorguları kaydedilmediğinden bu kapsamda paylaşılacak içerik verisi bulunmamaktadır.</strong></p>
+
+                        <h3>5.4 Altyapı Sağlayıcıları</h3>
+                        <p>VPN sunucularımız ve veritabanı altyapımız, veri işleme sözleşmeleriyle bağlı güvenilir bulut altyapı sağlayıcıları üzerinde barındırılmaktadır. Bu sağlayıcılar verilerinize yalnızca teknik operasyon kapsamında erişebilir ve kendi amaçları için kullanamaz.</p>
+
+                        <h2>6. Veri Saklama Süreleri</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Veri Kategorisi</th>
+                                    <th>Saklama Süresi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hesap bilgileri (e-posta, şifre hash)</td>
+                                    <td>Hesap aktif olduğu sürece; silme talebinden itibaren 30 gün içinde kalıcı silme</td>
+                                </tr>
+                                <tr>
+                                    <td>Cihaz bilgileri</td>
+                                    <td>Hesap ile birlikte; cihaz kaldırıldığında 30 gün içinde silme</td>
+                                </tr>
+                                <tr>
+                                    <td>Bağlantı meta verileri</td>
+                                    <td>En fazla 90 gün</td>
+                                </tr>
+                                <tr>
+                                    <td>Abonelik geçmişi</td>
+                                    <td>Yasal saklama yükümlülükleri kapsamında 5 yıl</td>
+                                </tr>
+                                <tr>
+                                    <td>Destek yazışmaları</td>
+                                    <td>Talebin kapanmasından itibaren 1 yıl</td>
+                                </tr>
+                                <tr>
+                                    <td>VPN trafik içeriği</td>
+                                    <td>Kaydedilmez — saklama süresi geçerli değil</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>7. Güvenlik Önlemleri</h2>
+                        <p>Kişisel verilerinizin güvenliğini sağlamak için aşağıdaki teknik ve idari önlemler uygulanmaktadır:</p>
                         <ul>
-                            <li><strong>Ödeme işlemcileri:</strong> Google Play, ödeme işlemleri için zorunlu bilgileri işler.</li>
-                            <li><strong>Google Sign-In:</strong> Google ile giriş tercih ederseniz Google kimlik doğrulama sürecinde ilgili bilgileri işler.</li>
-                            <li><strong>Yasal zorunluluklar:</strong> Yürürlükteki mevzuat veya yetkili resmi makamların talebi doğrultusunda, yalnızca yasal olarak zorunlu minimum bilgi paylaşılır. VPN trafik içeriği kaydedilmediğinden bu kapsamda paylaşılacak içerik verisi bulunmamaktadır.</li>
+                            <li>Parolalar bcrypt algoritmasıyla şifrelenerek saklanır; düz metin parola hiçbir zaman tutulmaz.</li>
+                            <li>API iletişimleri TLS ile şifrelenir; tüm ağ bağlantıları güvenli kanallar üzerinden gerçekleşir.</li>
+                            <li>JWT tabanlı kimlik doğrulama; kısa ömürlü erişim token'ları (24 saat) ve uzun ömürlü yenileme token'ları (90 gün) kullanılır.</li>
+                            <li>Kimlik doğrulama ve kayıt endpoint'lerine dakikada 10 istekle sınırlı rate limiting uygulanır.</li>
+                            <li>Veritabanına erişim yalnızca yetkili sistem hesaplarıyla sınırlandırılmıştır.</li>
+                            <li>Sistem günlükleri güvenlik olaylarının izlenmesi amacıyla ayrı bir altyapıda tutulur.</li>
+                        </ul>
+                        <p>Hiçbir güvenlik sistemi %100 ihlal garantisi veremez. Hesabınızla ilgili şüpheli bir durum fark ettiğinizde lütfen derhal <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine bildirin.</p>
+
+                        <h2>8. Çerezler ve İzleme Teknolojileri</h2>
+                        <p>DataGuardVPN mobil uygulaması çerez kullanmamaktadır. Web sitemiz yalnızca temel işlevsellik ve güvenlik amacıyla zorunlu olan teknik mekanizmaları kullanır:</p>
+                        <ul>
+                            <li><strong>Kullanılan:</strong> Oturum yönetimi için zorunlu teknik veriler</li>
+                            <li><strong>Kullanılmayan:</strong> Reklam çerezleri, davranışsal izleme araçları (Google Analytics, Facebook Pixel vb.), üçüncü taraf iz takip sistemleri</li>
                         </ul>
 
-                        <h2>Veri Saklama Süresi</h2>
-                        <p>Kişisel verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı silmeniz durumunda verileriniz yasal saklama yükümlülükleri saklı kalmak kaydıyla silinir. Bağlantı meta verileri en fazla 90 gün saklanır. VPN trafik içeriği hiçbir zaman kaydedilmediğinden saklama süresi de söz konusu değildir.</p>
+                        <h2>9. Çocukların Gizliliği</h2>
+                        <p>Hizmetimiz 16 yaşın altındaki bireylere yönelik değildir. 16 yaş altı kullanıcılardan bilerek kişisel veri toplanmaz. 16 yaş altı bir kullanıcıya ait veri toplandığı anlaşılırsa söz konusu hesap kapatılır ve veriler derhal silinir. Ebeveynler veya vasiler, küçüklere ait verinin silinmesini talep edebilir; bunun için <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> ile iletişime geçebilirler.</p>
 
-                        <h2>Güvenlik</h2>
-                        <p>Verileriniz; endüstri standardı idari, teknik ve fiziksel önlemlerle korunmaktadır. Hesap bilgilerine erişim yalnızca yetkili personelle sınırlıdır. Hiçbir güvenlik sistemi %100 koruma sağlayamaz; bu nedenle güçlü bir parola kullanmanızı ve hesabınızı korumanızı öneririz.</p>
+                        <h2>10. Kullanıcı Hakları</h2>
+                        <p>Kişisel verilerinize ilişkin aşağıdaki haklara sahipsiniz:</p>
+                        <ul>
+                            <li><strong>Erişim hakkı:</strong> Hakkınızda tuttuğumuz verilerin neler olduğunu öğrenme</li>
+                            <li><strong>Düzeltme hakkı:</strong> Yanlış veya eksik verilerin düzeltilmesini talep etme</li>
+                            <li><strong>Silme hakkı:</strong> Kişisel verilerinizin silinmesini talep etme ("unutulma hakkı")</li>
+                            <li><strong>İşlemeyi kısıtlama hakkı:</strong> Belirli veri işleme faaliyetlerinin durdurulmasını talep etme</li>
+                            <li><strong>İtiraz hakkı:</strong> Meşru menfaate dayalı veri işleme faaliyetlerine itiraz etme</li>
+                            <li><strong>Veri taşınabilirliği hakkı:</strong> Verilerinizin makine okunabilir formatta tarafınıza teslim edilmesini talep etme</li>
+                            <li><strong>Rızayı geri çekme hakkı:</strong> Açık rızaya dayalı işleme faaliyetlerini istediğiniz zaman durdurma</li>
+                            <li><strong>Şikâyet hakkı:</strong> Kişisel Verileri Koruma Kurumu'na (KVKK) başvurma</li>
+                        </ul>
+                        <p>Bu haklarınızı kullanmak için <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine (konu: Kişisel Veri Talebi) başvurunuz. Talepler en geç 30 gün içinde yanıtlanır. Türk kullanıcıların KVKK kapsamındaki hakları hakkında ayrıntılı bilgi için <a href="kvkk.html">KVKK Aydınlatma Metni</a>'ne başvurunuz.</p>
 
-                        <h2>Çerezler ve İzleme Teknolojileri</h2>
-                        <p>DataGuardVPN mobil uygulaması çerez kullanmamaktadır. Web sitemiz yalnızca temel işlevsellik için zorunlu olan teknik çerezleri kullanır; reklam veya davranışsal izleme amacıyla çerez kullanılmaz.</p>
+                        <h2>11. Politika Güncellemeleri</h2>
+                        <p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişiklikler yürürlüğe girmeden en az 7 gün önce e-posta veya uygulama bildirimi aracılığıyla duyurulur. Değişikliklerin yürürlüğe girmesinden sonra hizmeti kullanmaya devam etmeniz güncel politikayı kabul ettiğiniz anlamına gelir. Politikanın geçmiş versiyonları talep üzerine temin edilebilir.</p>
 
-                        <h2>Çocukların Gizliliği</h2>
-                        <p>Hizmetimiz 16 yaşın altındaki bireylere yönelik değildir ve bu kişilerden bilerek kişisel veri toplanmaz. 16 yaş altı bir kullanıcıya ait veri toplandığı fark edilirse ilgili hesap kapatılır ve veriler silinir.</p>
-
-                        <h2>Politika Güncellemeleri</h2>
-                        <p>Bu politika zaman zaman güncellenebilir. Önemli değişiklikler e-posta veya uygulama bildirimi aracılığıyla önceden duyurulur. Güncelleme tarihinden sonra hizmeti kullanmaya devam etmeniz değiştirilmiş politikayı kabul ettiğiniz anlamına gelir.</p>
-
-                        <h2>İletişim</h2>
-                        <p>Gizlilik politikamıza ilişkin sorularınız için: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></p>
-                        <p>Türk kullanıcılar için yasal haklarınızın tamamı: <a href="kvkk.html">KVKK Aydınlatma Metni</a></p>
+                        <h2>12. İletişim</h2>
+                        <p>Gizlilik politikamıza ilişkin soru, talep veya şikâyetleriniz için:</p>
+                        <ul>
+                            <li>E-posta: <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: Gizlilik)</li>
+                            <li>Türk kullanıcılar için yasal haklarınız: <a href="kvkk.html">KVKK Aydınlatma Metni</a></li>
+                            <li>Açık rıza yönetimi: <a href="consent.html">Açık Rıza Metni</a></li>
+                        </ul>
                     </div>
                 </div>
 
