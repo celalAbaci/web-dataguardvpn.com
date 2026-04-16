@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0a0f1f; color: #e0e0e0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -44,36 +45,36 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="index.html" class="flex items-center space-x-3">
-                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
+                    <img src="ic_logo.webp" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
                     <span class="text-2xl font-extrabold text-white tracking-tight">DataGuardVPN</span>
                 </a>
                 <nav class="hidden md:flex space-x-6">
-                    <a href="index.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Ana Sayfa</a>
-                    <a href="about.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Hakkımızda</a>
-                    <a href="terms.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Hizmet Şartları</a>
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Ana Sayfa</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Hakkımızda</a>
+                    <a href="terms.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Hizmet Şartları</a>
                     <a href="privacy.html" class="text-blue-400 font-medium transition duration-300">Gizlilik</a>
-                    <a href="consent.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İzin Yönetimi</a>
-                    <a href="careers.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Kariyer</a>
-                    <a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İletişim</a>
+                    <a href="consent.html" class="text-gray-600 hover:text-blue-600 transition duration-300">İzin Yönetimi</a>
+                    <a href="careers.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Kariyer</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300">İletişim</a>
                 </nav>
                 <div class="hidden md:block">
                     <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
                         <i class="ph-bold ph-list text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <div id="mobile-menu" class="md:hidden hidden bg-brand-card shadow-xl">
-            <a href="index.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Ana Sayfa</a>
-            <a href="about.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Hakkımızda</a>
-            <a href="terms.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Hizmet Şartları</a>
+            <a href="index.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">Ana Sayfa</a>
+            <a href="about.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">Hakkımızda</a>
+            <a href="terms.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">Hizmet Şartları</a>
             <a href="privacy.html" class="block px-4 py-3 text-lg text-blue-400 hover:bg-gray-700">Gizlilik Politikası</a>
-            <a href="consent.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İzin Yönetimi</a>
-            <a href="careers.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Kariyer</a>
-            <a href="contact.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İletişim</a>
+            <a href="consent.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">İzin Yönetimi</a>
+            <a href="careers.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">Kariyer</a>
+            <a href="contact.html" class="block px-4 py-3 text-lg text-gray-700 hover:bg-gray-100">İletişim</a>
             <div class="p-4">
                 <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
             </div>
@@ -341,7 +342,7 @@
                     <p>Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki kanalı kullanabilirsiniz:</p>
                     <ul>
                         <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: Gizlilik Talebi)</li>
-                        <li><strong>Web sitesi:</strong> <a href="contact.html">dataguardvpn.com/contact.html</a></li>
+                        <li><strong>Web sitesi:</strong> <a href="contact.html">https://www.dataguardvpn.com/contact</a></li>
                     </ul>
                     <p>Talebinizde; adınız, kayıtlı e-posta adresiniz ve talep konunuzun açıklamasını belirtmeniz yeterlidir. Güvenliğiniz için kimliğinizi doğrulamamız gerekebilir. Talepler, teslim alındıktan itibaren en geç <strong>30 gün</strong> içinde ücretsiz olarak yanıtlanır. İşlemin ayrıca bir maliyet gerektirdiği durumlarda, devam etmeden önce tarafınıza bilgi verilir.</p>
 
@@ -383,7 +384,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Web Sitesi</strong></td>
-                                <td><a href="contact.html">dataguardvpn.com/contact.html</a></td>
+                                <td><a href="contact.html">https://www.dataguardvpn.com/contact</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Resmi Şirket Adresi</strong></td>

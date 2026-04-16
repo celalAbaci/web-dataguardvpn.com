@@ -1,0 +1,194 @@
+/* ============================================================
+   DataGuardVPN — Açık Tema (Light Theme) Genel Stiller
+   Tüm sayfalarda son <link> etiketi olarak yüklenir.
+   ============================================================ */
+
+/* --- Temel arka plan ve metin renkleri --- */
+body {
+    background-color: #f8fafc !important;
+    color: #374151 !important;
+}
+
+/* --- Marka renk sınıfları --- */
+.bg-brand-dark  { background-color: #f8fafc !important; }
+.bg-brand-card  { background-color: #ffffff !important; }
+.bg-brand-nav   { background-color: rgba(255,255,255,0.97) !important; }
+
+/* --- Üst bilgi / navigasyon --- */
+.backdrop-blur-custom {
+    background-color: rgba(255,255,255,0.97) !important;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.09) !important;
+}
+
+/* --- Tailwind gri arka plan geçersiz kılımları --- */
+.bg-gray-900   { background-color: #f1f5f9 !important; }
+.bg-gray-800   { background-color: #f9fafb !important; }
+.bg-gray-700   { background-color: #f3f4f6 !important; }
+.bg-gray-600   { background-color: #e5e7eb !important; }
+
+/* Şeffaf varyantlar */
+.bg-gray-800\/50, .bg-gray-800\/60 { background-color: rgba(248,250,252,0.85) !important; }
+.bg-gray-700\/30                   { background-color: rgba(243,244,246,0.6) !important; }
+.bg-gray-700\/50                   { background-color: rgba(243,244,246,0.8) !important; }
+
+/* Hover arka planlar */
+.hover\:bg-gray-700:hover { background-color: #f3f4f6 !important; }
+.hover\:bg-gray-600:hover { background-color: #e5e7eb !important; }
+
+/* --- Tailwind metin rengi geçersiz kılımları --- */
+.text-gray-200 { color: #374151 !important; }
+.text-gray-300 { color: #4b5563 !important; }
+.text-gray-400 { color: #6b7280 !important; }
+.text-gray-500 { color: #9ca3af !important; }
+
+/* --- Kenar renkleri --- */
+.border-gray-700,
+.border-gray-700\/50,
+.border-gray-700\/30 { border-color: #e5e7eb !important; }
+.border-gray-600      { border-color: #d1d5db !important; }
+.divide-gray-700\/50 > * + * { border-color: #e5e7eb !important; }
+
+/* --- Başlıklar: text-white → koyu lacivert --- */
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white { color: #0f172a !important; }
+
+/* Header marka adı */
+header span.text-white,
+header a.text-white { color: #0f172a !important; }
+
+/* Gri arka planlı kutular içindeki text-white → koyu */
+.bg-gray-800 .text-white,
+.bg-gray-800\/50 .text-white,
+.bg-gray-800\/60 .text-white,
+.bg-gray-700 .text-white { color: #1f2937 !important; }
+
+/* Renkli arka planlarda beyaz metin korunur (butonlar, ikonlar) */
+[class*="bg-blue-"]     .text-white { color: #ffffff !important; }
+[class*="bg-cyan-"]     .text-white { color: #ffffff !important; }
+[class*="bg-green-"]    .text-white { color: #ffffff !important; }
+[class*="bg-purple-"]   .text-white { color: #ffffff !important; }
+[class*="bg-red-"]      .text-white { color: #ffffff !important; }
+[class*="bg-indigo-"]   .text-white { color: #ffffff !important; }
+/* Kendi içinde blue/green/cyan olan span/butonlar */
+[class*="bg-blue-"].text-white,
+[class*="bg-cyan-"].text-white,
+[class*="bg-green-"].text-white,
+[class*="bg-purple-"].text-white { color: #ffffff !important; }
+
+/* --- Form alanları --- */
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+textarea,
+select {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #374151 !important;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: #2563eb !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* --- Kod blokları --- */
+code {
+    background-color: #f1f5f9 !important;
+    color: #1d4ed8 !important;
+    border: 1px solid #e2e8f0;
+}
+
+/* --- Gölge düzenlemeleri --- */
+.shadow-2xl { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04) !important; }
+.shadow-xl  { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px rgba(0,0,0,0.04) !important; }
+.shadow-lg  { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04) !important; }
+
+/* --- Prose içerik sınıfı --- */
+.prose-content p                        { color: #4b5563; line-height: 1.75; }
+.prose-content ul li,
+.prose-content ol li                    { color: #4b5563; }
+.prose-content strong                   { color: #111827; }
+.prose-content h2                       { color: #111827; border-bottom-color: #e5e7eb; }
+.prose-content h3                       { color: #2563eb; }
+.prose-content a                        { color: #2563eb; }
+.prose-content table th                 { background-color: #f3f4f6 !important; color: #111827; border-color: #e5e7eb !important; }
+.prose-content table td                 { border-color: #e5e7eb !important; color: #4b5563; }
+.prose-content table tr:nth-child(even) td { background-color: #f8fafc !important; }
+
+/* --- Bilgi / uyarı kutuları --- */
+.highlight-box {
+    background-color: #eff6ff !important;
+    border-color: rgba(37,99,235,0.3) !important;
+}
+.highlight-box p { color: #1d4ed8 !important; }
+
+.info-box {
+    background-color: #eff6ff !important;
+    border-color: rgba(37,99,235,0.3) !important;
+}
+.info-box p { color: #1d4ed8 !important; }
+
+.warning-box {
+    background-color: #fffbeb !important;
+    border-color: rgba(202,138,4,0.4) !important;
+}
+.warning-box p { color: #92400e !important; }
+
+/* --- Consent (izin) öğeleri --- */
+.consent-item {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+}
+.consent-item:has(input:checked) {
+    border-color: #2563eb !important;
+    background-color: #eff6ff !important;
+}
+.consent-item .item-title { color: #111827 !important; }
+.consent-item .item-desc  { color: #6b7280 !important; }
+
+/* --- Alert kutusu --- */
+.custom-alert-box {
+    background-color: #ffffff !important;
+    color: #374151 !important;
+    border-color: #e5e7eb !important;
+}
+
+/* --- Sekme butonları (about.html) --- */
+.tab-btn:not(.active) {
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+}
+.tab-btn:not(.active):hover {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+/* --- Pozisyon kartları (careers.html) --- */
+.position-card {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+}
+.position-card:hover { border-color: #2563eb !important; }
+
+/* --- Dosya yükleme alanı (careers.html) --- */
+.file-drop-zone {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #6b7280 !important;
+}
+.file-drop-zone:hover,
+.file-drop-zone.dragover {
+    border-color: #2563eb !important;
+    background-color: #eff6ff !important;
+}
+
+/* --- Hata kodu tabloları --- */
+.bg-gray-800\/60 { background-color: rgba(248,250,252,0.9) !important; }
+
+/* --- Footer --- */
+footer.bg-brand-card,
+footer { background-color: #f1f5f9 !important; }
+.text-gray-400.hover\:text-white:hover { color: #1f2937 !important; }
+
+/* --- Mobil menü buton ikonu --- */
+#mobile-menu-button { color: #4b5563 !important; }
