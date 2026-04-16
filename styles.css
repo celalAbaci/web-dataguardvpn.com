@@ -6,7 +6,7 @@
 /* --- Temel arka plan ve metin renkleri --- */
 body {
     background-color: #f8fafc !important;
-    color: #374151 !important;
+    color: #1f2937 !important;
 }
 
 /* --- Marka renk sınıfları --- */
@@ -27,17 +27,45 @@ body {
 .bg-gray-600   { background-color: #e5e7eb !important; }
 
 /* Şeffaf varyantlar */
-.bg-gray-800\/50, .bg-gray-800\/60 { background-color: rgba(248,250,252,0.85) !important; }
-.bg-gray-700\/30                   { background-color: rgba(243,244,246,0.6) !important; }
-.bg-gray-700\/50                   { background-color: rgba(243,244,246,0.8) !important; }
+.bg-gray-800\/50  { background-color: rgba(248,250,252,0.85) !important; }
+.bg-gray-800\/60  { background-color: rgba(248,250,252,0.9)  !important; }
+.bg-gray-700\/30  { background-color: rgba(243,244,246,0.6)  !important; }
+.bg-gray-700\/50  { background-color: rgba(243,244,246,0.8)  !important; }
 
 /* Hover arka planlar */
-.hover\:bg-gray-700:hover { background-color: #f3f4f6 !important; }
-.hover\:bg-gray-600:hover { background-color: #e5e7eb !important; }
+.hover\:bg-gray-700:hover { background-color: #e5e7eb !important; }
+.hover\:bg-gray-600:hover { background-color: #d1d5db !important; }
+
+/* --- GENIŞ KURAL: tüm text-white → koyu (açık tema) ---
+   Renkli arka planlardaki istisnalar aşağıda !important ile
+   geri kazanılıyor; bu nedenle bu kural en üstte. */
+.text-white {
+    color: #0f172a !important;
+}
+
+/* --- İSTİSNA: renkli arka planlarda beyaz metin korunur ---
+   (butonlar, ikon konteynerleri, renkli badge'ler) */
+[class*="bg-blue-"]   .text-white,
+[class*="bg-cyan-"]   .text-white,
+[class*="bg-green-"]  .text-white,
+[class*="bg-purple-"] .text-white,
+[class*="bg-red-"]    .text-white,
+[class*="bg-orange-"] .text-white,
+[class*="bg-indigo-"] .text-white { color: #ffffff !important; }
+
+/* Elementin kendisi renkli + text-white (buton, yuvarlak ikon vb.) */
+[class*="bg-blue-"].text-white,
+[class*="bg-cyan-"].text-white,
+[class*="bg-green-"].text-white,
+[class*="bg-purple-"].text-white,
+[class*="bg-red-"].text-white,
+[class*="bg-orange-"].text-white,
+[class*="bg-indigo-"].text-white { color: #ffffff !important; }
 
 /* --- Tailwind metin rengi geçersiz kılımları --- */
-.text-gray-200 { color: #374151 !important; }
-.text-gray-300 { color: #4b5563 !important; }
+.text-gray-100 { color: #1f2937 !important; }
+.text-gray-200 { color: #1f2937 !important; }
+.text-gray-300 { color: #374151 !important; }
 .text-gray-400 { color: #6b7280 !important; }
 .text-gray-500 { color: #9ca3af !important; }
 
@@ -48,48 +76,20 @@ body {
 .border-gray-600      { border-color: #d1d5db !important; }
 .divide-gray-700\/50 > * + * { border-color: #e5e7eb !important; }
 
-/* --- Başlıklar: text-white → koyu lacivert --- */
-h1.text-white,
-h2.text-white,
-h3.text-white,
-h4.text-white { color: #0f172a !important; }
-
-/* Header marka adı */
-header span.text-white,
-header a.text-white { color: #0f172a !important; }
-
-/* Gri arka planlı kutular içindeki text-white → koyu */
-.bg-gray-800 .text-white,
-.bg-gray-800\/50 .text-white,
-.bg-gray-800\/60 .text-white,
-.bg-gray-700 .text-white { color: #1f2937 !important; }
-
-/* Renkli arka planlarda beyaz metin korunur (butonlar, ikonlar) */
-[class*="bg-blue-"]     .text-white { color: #ffffff !important; }
-[class*="bg-cyan-"]     .text-white { color: #ffffff !important; }
-[class*="bg-green-"]    .text-white { color: #ffffff !important; }
-[class*="bg-purple-"]   .text-white { color: #ffffff !important; }
-[class*="bg-red-"]      .text-white { color: #ffffff !important; }
-[class*="bg-indigo-"]   .text-white { color: #ffffff !important; }
-/* Kendi içinde blue/green/cyan olan span/butonlar */
-[class*="bg-blue-"].text-white,
-[class*="bg-cyan-"].text-white,
-[class*="bg-green-"].text-white,
-[class*="bg-purple-"].text-white { color: #ffffff !important; }
-
 /* --- Form alanları --- */
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
 textarea,
 select {
     background-color: #ffffff !important;
     border-color: #d1d5db !important;
-    color: #374151 !important;
+    color: #1f2937 !important;
 }
 input:focus, textarea:focus, select:focus {
     border-color: #2563eb !important;
     outline: none;
     box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
+input::placeholder, textarea::placeholder { color: #9ca3af !important; }
 
 /* --- Kod blokları --- */
 code {
@@ -104,15 +104,15 @@ code {
 .shadow-lg  { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04) !important; }
 
 /* --- Prose içerik sınıfı --- */
-.prose-content p                        { color: #4b5563; line-height: 1.75; }
+.prose-content p                        { color: #374151; line-height: 1.75; }
 .prose-content ul li,
-.prose-content ol li                    { color: #4b5563; }
+.prose-content ol li                    { color: #374151; }
 .prose-content strong                   { color: #111827; }
 .prose-content h2                       { color: #111827; border-bottom-color: #e5e7eb; }
 .prose-content h3                       { color: #2563eb; }
 .prose-content a                        { color: #2563eb; }
 .prose-content table th                 { background-color: #f3f4f6 !important; color: #111827; border-color: #e5e7eb !important; }
-.prose-content table td                 { border-color: #e5e7eb !important; color: #4b5563; }
+.prose-content table td                 { border-color: #e5e7eb !important; color: #374151; }
 .prose-content table tr:nth-child(even) td { background-color: #f8fafc !important; }
 
 /* --- Bilgi / uyarı kutuları --- */
@@ -149,7 +149,7 @@ code {
 /* --- Alert kutusu --- */
 .custom-alert-box {
     background-color: #ffffff !important;
-    color: #374151 !important;
+    color: #1f2937 !important;
     border-color: #e5e7eb !important;
 }
 
@@ -169,26 +169,41 @@ code {
     border-color: #e5e7eb !important;
 }
 .position-card:hover { border-color: #2563eb !important; }
+.position-card h3    { color: #111827 !important; }
+.position-card p     { color: #4b5563 !important; }
 
 /* --- Dosya yükleme alanı (careers.html) --- */
 .file-drop-zone {
     background-color: #f9fafb !important;
     border-color: #d1d5db !important;
-    color: #6b7280 !important;
 }
+.file-drop-zone p   { color: #4b5563 !important; }
 .file-drop-zone:hover,
 .file-drop-zone.dragover {
     border-color: #2563eb !important;
     background-color: #eff6ff !important;
 }
 
-/* --- Hata kodu tabloları --- */
+/* --- Form label renkleri (careers.html) --- */
+.form-label { color: #374151 !important; }
+.form-input {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+.form-input::placeholder { color: #9ca3af !important; }
+
+/* --- Hata kodu tabloları (index.html error-codes) --- */
 .bg-gray-800\/60 { background-color: rgba(248,250,252,0.9) !important; }
 
 /* --- Footer --- */
-footer.bg-brand-card,
 footer { background-color: #f1f5f9 !important; }
-.text-gray-400.hover\:text-white:hover { color: #1f2937 !important; }
+footer .text-gray-400 { color: #6b7280 !important; }
+footer a.text-gray-400:hover { color: #1f2937 !important; }
 
-/* --- Mobil menü buton ikonu --- */
-#mobile-menu-button { color: #4b5563 !important; }
+/* --- Mobil menü arka planı --- */
+#mobile-menu { background-color: #ffffff !important; }
+
+/* --- Marka adı header'da (DataGuardVPN span) --- */
+header span.text-white,
+header a span.text-white { color: #0f172a !important; }
