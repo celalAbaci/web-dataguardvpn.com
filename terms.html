@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmet Şartları - DataGuardVPN LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0f1f; color: #e0e0e0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        main section { animation: fadeIn 0.5s ease-in-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(10, 15, 31, 0.75); }
+        .bg-brand-dark { background-color: #0a0f1f; }
+        .bg-brand-card { background-color: #111827; }
+        .prose-content h2 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
+        .prose-content h3 { font-size: 0.95rem; font-weight: 600; color: #93c5fd; margin-top: 1.25rem; margin-bottom: 0.4rem; }
+        .prose-content p { color: #d1d5db; line-height: 1.75; margin-bottom: 0.9rem; }
+        .prose-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ul li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.25rem; }
+        .prose-content ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ol li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.25rem; }
+        .prose-content strong { color: #f3f4f6; }
+        .prose-content a { color: #60a5fa; text-decoration: underline; }
+        .prose-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .prose-content th { background-color: #1f2937; color: #9ca3af; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 1rem; text-align: left; }
+        .prose-content td { padding: 0.65rem 1rem; border-bottom: 1px solid #374151; color: #d1d5db; font-size: 0.9rem; vertical-align: top; }
+        .prose-content tr:hover td { background-color: #1f2937; }
+        .info-box { background-color: #1e3a5f; border: 1px solid #2563eb66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .info-box p { color: #93c5fd; margin: 0; font-size: 0.9rem; }
+        .warning-box { background-color: #2d1515; border: 1px solid #dc262666; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .warning-box p { color: #fca5a5; margin: 0; font-size: 0.9rem; }
+        .success-box { background-color: #1c2a1a; border: 1px solid #16a34a66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .success-box p { color: #86efac; margin: 0; font-size: 0.9rem; }
+        .toc-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #1f2937; }
+        .toc-num { flex-shrink: 0; width: 1.75rem; height: 1.75rem; background: #1e3a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #60a5fa; }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200">
+
+    <!-- ===== HEADER ===== -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-custom shadow-lg border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
+                    <span class="text-2xl font-extrabold text-white tracking-tight">DataGuardVPN</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Ana Sayfa</a>
+                    <a href="about.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Hakkımızda</a>
+                    <a href="terms.html" class="text-blue-400 font-medium transition duration-300">Hizmet Şartları</a>
+                    <a href="privacy.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Gizlilik</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Kariyer</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İletişim</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="ph-bold ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-brand-card shadow-xl">
+            <a href="index.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Ana Sayfa</a>
+            <a href="about.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Hakkımızda</a>
+            <a href="terms.html" class="block px-4 py-3 text-lg text-blue-400 hover:bg-gray-700">Hizmet Şartları</a>
+            <a href="privacy.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Gizlilik Politikası</a>
+            <a href="careers.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Kariyer</a>
+            <a href="contact.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İletişim</a>
+            <div class="p-4">
+                <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ANA İÇERİK ===== -->
+    <main class="overflow-x-hidden">
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block px-4 py-1.5 bg-blue-900/50 text-blue-400 text-sm font-semibold rounded-full mb-4 border border-blue-700/50">DataGuardVPN LLC — Wyoming, ABD</span>
+                    <h1 class="text-4xl font-extrabold text-white mb-3">Hizmet Şartları</h1>
+                    <p class="text-gray-400">Son güncelleme: Nisan 2026</p>
+                </div>
+
+                <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 prose-content">
+
+                    <div class="info-box">
+                        <p><i class="ph-bold ph-info mr-2"></i> Bu Hizmet Şartları Sözleşmesi ("Sözleşme"), <strong>DataGuardVPN LLC</strong> (Wyoming, ABD) ile DataGuardVPN uygulamasını ve hizmetlerini kullanan kişi ("Kullanıcı") arasında hukuken bağlayıcı bir sözleşme niteliğindedir. Uygulamayı indirerek, yükleyerek veya hizmeti herhangi bir biçimde kullanarak bu Sözleşme'nin tamamını kabul etmiş sayılırsınız. <strong>Şartları kabul etmiyorsanız lütfen uygulamayı silip hesabınızı kapatın.</strong></p>
+                    </div>
+
+                    <!-- İÇİNDEKİLER -->
+                    <h2>İçindekiler</h2>
+                    <div class="mb-6">
+                        <div class="toc-item"><div class="toc-num">1</div><span class="text-gray-300">Sözleşmenin Kabulü, Taraflar ve Yaş Şartı</span></div>
+                        <div class="toc-item"><div class="toc-num">2</div><span class="text-gray-300">Kabul Edilebilir Kullanım Politikası (AUP)</span></div>
+                        <div class="toc-item"><div class="toc-num">3</div><span class="text-gray-300">Hizmetin Doğası, Kesintiler ve Sorumluluk Reddi</span></div>
+                        <div class="toc-item"><div class="toc-num">4</div><span class="text-gray-300">Adil Kullanım Kotası (FUP)</span></div>
+                        <div class="toc-item"><div class="toc-num">5</div><span class="text-gray-300">Abonelik, Yenileme ve Geri Ödemeler</span></div>
+                        <div class="toc-item"><div class="toc-num">6</div><span class="text-gray-300">DMCA Telif Hakkı Politikası</span></div>
+                        <div class="toc-item"><div class="toc-num">7</div><span class="text-gray-300">Uygulanacak Hukuk ve Uyuşmazlık Çözümü</span></div>
+                    </div>
+
+                    <!-- BÖLÜM 1 -->
+                    <h2>1. Sözleşmenin Kabulü, Taraflar ve Yaş Şartı</h2>
+
+                    <h3>1.1 Taraflar</h3>
+                    <p>Bu Sözleşme, <strong>DataGuardVPN LLC</strong> (Wyoming eyaletinde kurulu sınırlı sorumlu şirket; bundan böyle "Şirket", "biz", "bizim") ile DataGuardVPN uygulamasını veya ilgili hizmetleri kullanan gerçek kişi ("Kullanıcı", "siz") arasında akdedilmiştir.</p>
+
+                    <h3>1.2 Sözleşmenin Kabulü</h3>
+                    <p>DataGuardVPN uygulamasını indirmek, yüklemek, hesap açmak veya hizmeti herhangi bir biçimde kullanmak; bu Sözleşme'yi, <a href="privacy.html">Gizlilik Politikası</a>'nı ve <a href="consent.html">İzin ve Tercih Yönetimi</a> sayfasında belirtilen koşulları okuduğunuzu ve kabul ettiğinizi gösterir. Bu belgeler bir bütün olarak hizmet sözleşmesini oluşturur.</p>
+
+                    <h3>1.3 Yaş Şartı</h3>
+                    <p>DataGuardVPN hizmetini kullanabilmek için <strong>18 yaşını doldurmuş</strong> olmanız ya da kendi ülkenizde ergin sayılmanız gerekmektedir. 18 yaşın altında olan kişilerin hizmetimizi yalnızca ebeveyn veya yasal vasisinin açık rızasıyla ve gözetiminde kullanması zorunludur. 18 yaş altı bir kullanıcıya ait hesap tespit edilmesi halinde hesap önceden bildirim yapılmaksızın kapatılır ve kişisel veriler silinir.</p>
+
+                    <h3>1.4 Hesap Güvenliği ve Sorumluluğu</h3>
+                    <p>Hesabınıza ait kimlik bilgilerinin (kullanıcı adı, parola) gizliliğini korumak tamamen sizin sorumluluğunuzdadır. Hesabınız üzerinden gerçekleştirilen tüm işlemlerden, bu işlemleri bizzat yapmamış olsanız dahi, siz hukuken sorumlusunuz. Hesabınızın yetkisiz kullanıldığını tespit etmeniz durumunda derhal <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine bildirin.</p>
+
+                    <!-- BÖLÜM 2 -->
+                    <h2>2. Kabul Edilebilir Kullanım Politikası (AUP)</h2>
+                    <p>DataGuardVPN; internet özgürlüğünü ve çevrimiçi gizliliği korumak amacıyla geliştirilmiştir. OpenVPN, VLESS+Reality ve Stealth protokolleri; sansürü aşmak, gözetimden korunmak ve güvensiz ağlarda güvenli iletişim kurmak için meşru araçlardır. Bu protokoller suç işlemek için bir kalkan olarak kullanılamaz.</p>
+
+                    <h3>2.1 Ağ Saldırıları ve Kötüye Kullanım — Kesinlikle Yasak</h3>
+                    <ul>
+                        <li>Hizmet reddi (DoS/DDoS) saldırıları düzenlemek veya bu tür saldırılara altyapı sağlamak</li>
+                        <li>Yetkisiz sistemlere sızmak, şifre kırmak veya brute-force saldırısı gerçekleştirmek</li>
+                        <li>Port tarama, güvenlik açığı araştırması veya ağ keşfi amacıyla otomatik araç kullanmak</li>
+                        <li>Zararlı yazılım, virüs, trojan, fidye yazılımı veya casus yazılım dağıtmak</li>
+                        <li>Botnet oluşturmak veya mevcut botnet ağlarına katılmak</li>
+                        <li>Açık proxy veya relay tarama faaliyetleri yürütmek</li>
+                    </ul>
+
+                    <h3>2.2 Yasadışı İçerik ve Faaliyetler — Kesinlikle Yasak</h3>
+                    <ul>
+                        <li>Çocuk istismarı materyalleri de dahil olmak üzere her türlü yasa dışı içeriğe erişmek veya dağıtmak</li>
+                        <li>Kimlik avı (phishing), dolandırıcılık veya sosyal mühendislik saldırıları düzenlemek</li>
+                        <li>Kara para aklaması, vergi kaçakçılığı veya diğer mali suçları işlemek</li>
+                        <li>Terörist içerik, nefret söylemi veya şiddeti kışkırtıcı materyaller yaymak</li>
+                        <li>İzinsiz kişisel veri toplamak, satmak veya işlemek</li>
+                        <li>Ulusal veya uluslararası herhangi bir yasayı ihlal eden içerik iletmek</li>
+                    </ul>
+
+                    <h3>2.3 İstenmeyen İletişim — Yasak</h3>
+                    <ul>
+                        <li>Alıcı rızası olmaksızın toplu e-posta, SMS veya anlık mesaj göndermek (spam)</li>
+                        <li>Otomatik reklam botu trafiği veya tıklama sahtekârlığı faaliyetleri yürütmek</li>
+                        <li>Yanıltıcı yönlendirme veya pop-up reklam yayınlamak</li>
+                    </ul>
+
+                    <h3>2.4 Fikri Mülkiyet İhlalleri — Yasak</h3>
+                    <ul>
+                        <li>Telif hakkı, patent veya marka haklarını ihlal eden içerikleri dağıtmak</li>
+                        <li>Lisanssız yazılım, film, müzik veya korunan diğer eserleri aktarmak</li>
+                    </ul>
+
+                    <h3>2.5 Hizmetin Kötüye Kullanımı — Yasak</h3>
+                    <ul>
+                        <li>Birden fazla hesap oluşturarak ücretsiz plan sınırlarını aşmaya çalışmak</li>
+                        <li>Hesap kimlik bilgilerini üçüncü taraflara devretmek veya satmak</li>
+                        <li>DataGuardVPN sunucularını başka VPN sunucularına yönlendirici olarak kullanmak</li>
+                        <li>Uygulamayı tersine mühendislik, kaynak kod çıkarma veya benzeri yöntemlerle analiz etmek</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <p><i class="ph-bold ph-warning mr-2"></i> <strong>Yaptırımlar:</strong> Bu politikayı ihlal eden kullanımların tespiti durumunda hesabınız önceden bildirim yapılmaksızın kalıcı olarak kapatılabilir; aktif aboneliğiniz iade yapılmaksızın iptal edilebilir. Yasal yaptırım gerektiren durumlarda DataGuardVPN LLC, yetkili makamlarla tam iş birliği yapar.</p>
+                    </div>
+
+                    <!-- BÖLÜM 3 -->
+                    <h2>3. Hizmetin Doğası, Kesintiler ve Sorumluluk Reddi</h2>
+
+                    <h3>3.1 Hizmetin Kapsamı</h3>
+                    <p>DataGuardVPN; internet trafiğinizi şifreleyen, IP adresinizi maskeleyerek çevrimiçi gizliliğinizi artıran ve güvensiz ağlarda iletişimlerinizi koruyan bir Sanal Özel Ağ (VPN) hizmetidir. Hizmet; OpenVPN, VLESS+Reality ve Stealth (Xray) protokollerini destekleyen özel geliştirme Android istemcisi ve Spring Boot tabanlı yüksek performanslı arka uç altyapısı üzerinde sunulmaktadır.</p>
+                    <p>DataGuardVPN bir iletişim aracı değil, bir <strong>gizlilik ve güvenlik aracıdır.</strong> Hizmet, kullanıcıların VPN bağlantısı üzerinden gerçekleştirdiği eylemlerden doğan hukuki veya maddi sorumluluğu üstlenmez.</p>
+
+                    <h3>3.2 Hizmet Kesintileri</h3>
+                    <p>DataGuardVPN LLC, hizmetin kesintisiz ve yüksek kalitede sunulması için çalışır; ancak aşağıdaki durumlarda geçici kesintiler yaşanabilir:</p>
+                    <ul>
+                        <li>Planlı bakım ve sistem güncellemeleri (önceden duyurulur)</li>
+                        <li>Acil güvenlik yamaları veya kritik altyapı müdahaleleri</li>
+                        <li>Üçüncü taraf veri merkezi veya bulut sağlayıcılarından kaynaklanan sorunlar</li>
+                        <li>İnternet servis sağlayıcılarının veya hükümetlerin uyguladığı kısıtlamalar ya da engellemeler</li>
+                        <li>Doğal afetler, pandemi veya kontrolümüz dışındaki mücbir sebepler</li>
+                    </ul>
+
+                    <h3>3.3 Performans Garantisi Yoktur</h3>
+                    <p>Bağlantı hızı, gecikme süresi ve hizmet kalitesi; kullanıcının fiziksel konumu, yerel internet servis sağlayıcısı, seçilen sunucu bölgesi, ağ tıkanıklığı ve tercih edilen protokol gibi değişkenlere bağlı olarak farklılık gösterebilir. <strong>DataGuardVPN LLC, belirli bir bant genişliği, gecikme süresi veya kesintisizlik garantisi vermemektedir.</strong> Performans sorunlarında farklı bir sunucu bölgesi veya protokol denemenizi öneririz.</p>
+
+                    <h3>3.4 Sorumluluk Reddi (Disclaimer)</h3>
+                    <p>Yürürlükteki mevzuatın izin verdiği azami ölçüde, DataGuardVPN LLC; geçici hizmet kesintileri, VPN bağlantısı üzerinden erişilen içeriklerden kaynaklanan zararlar, üçüncü taraf hizmetlerinin kullanılamaması veya yetersiz performansı nedeniyle oluşan doğrudan, dolaylı, tesadüfi, özel ya da sonuç olarak ortaya çıkan zararlardan hiçbir koşulda sorumlu tutulamaz. Herhangi bir talep kapsamında Şirket'in azami toplam sorumluluğu, olaydan önceki <strong>üç (3) aylık dönemde</strong> kullanıcı tarafından ödenen abonelik ücretiyle sınırlıdır.</p>
+
+                    <!-- BÖLÜM 4 -->
+                    <h2>4. Adil Kullanım Kotası (FUP — Fair Usage Policy)</h2>
+                    <p>DataGuardVPN, abonelik planlarında sabit bir aylık veri kotası belirlememektedir. Bununla birlikte, hizmetin tüm kullanıcılara adil ve yüksek kalitede sunulabilmesi için aşağıdaki kullanımlar <strong>Adil Kullanım İhlali</strong> sayılır:</p>
+                    <ul>
+                        <li>Diğer kullanıcıların deneyimini olumsuz etkileyecek düzeyde sürekli ve aşırı bant genişliği tüketimi (örneğin 7/24 kesintisiz yüksek hızlı aktarım)</li>
+                        <li>Sunucu kaynaklarını tekeline almak amacıyla çok sayıda eş zamanlı oturum oluşturmak</li>
+                        <li>Otomatik scriptler veya botlar aracılığıyla yapay trafik üretmek (veri kazıma, scraping dahil)</li>
+                        <li>Ticari amaçlı bant genişliği yeniden satışı veya tünel aktarımı</li>
+                        <li>Ağı botnet altyapısına dönüştürmek</li>
+                    </ul>
+                    <p><strong>Yaptırım Süreci:</strong> Adil kullanım ihlali tespit edildiğinde kullanıcı önce e-posta ile uyarılır. Uyarıdan sonra durumun devam etmesi halinde; bant genişliği geçici olarak kısıtlanabilir, oturum sonlandırılabilir veya hesap askıya alınabilir. Kasıtlı ihlallerde önceden bildirim yapılmaksızın hesap kapatılabilir.</p>
+
+                    <!-- BÖLÜM 5 -->
+                    <h2>5. Abonelik, Yenileme ve Geri Ödemeler</h2>
+
+                    <h3>5.1 Abonelik Planları</h3>
+                    <p>DataGuardVPN; ücretsiz (sınırlı sunucu ve bant genişliği) ve premium (tüm sunucular, öncelikli bant genişliği, gelişmiş protokol desteği) olmak üzere iki katmanda hizmet sunmaktadır. Güncel plan detayları ve fiyatlandırma uygulama içinde görüntülenebilir. Fiyatlar, en az <strong>30 gün</strong> önceden duyurulmak kaydıyla değiştirilebilir.</p>
+
+                    <h3>5.2 Ödeme Altyapısı</h3>
+                    <p>Tüm premium abonelik ödemeleri <strong>Google Play</strong> altyapısı üzerinden gerçekleştirilmektedir. Kredi kartı, banka kartı veya diğer ödeme yöntemi bilgileriniz DataGuardVPN LLC sunucularında hiçbir zaman saklanmaz; bu bilgiler yalnızca Google'ın PCI-DSS uyumlu ödeme sistemi tarafından işlenir. Ödeme sorunları için öncelikle Google Play destek kanallarına başvurunuz.</p>
+
+                    <h3>5.3 Otomatik Yenileme</h3>
+                    <p>Premium abonelikler, kullanıcı tarafından iptal edilmediği sürece seçilen dönem (aylık veya yıllık) sonunda Google Play üzerinden otomatik olarak yenilenir. Yenileme dönem bitişinden en az <strong>24 saat önce</strong> iptal edilmezse gerçekleşir; yenileme ücreti dönem başlangıcından 24 saat öncesine kadar Google hesabınızdan tahsil edilebilir.</p>
+
+                    <h3>5.4 Abonelik İptali</h3>
+                    <p>Aboneliğinizi istediğiniz zaman Google Play üzerinden iptal edebilirsiniz. İptal işlemi mevcut ödeme döneminin sonunda geçerli olur; dönem içinde yapılan iptal sonucunda kalan süre için iade yapılmaz. İptal sonrasında ücretsiz plan kapsamında hizmetten yararlanmaya devam edebilirsiniz.</p>
+
+                    <h3>5.5 İadeler</h3>
+                    <p>Ödeme anlaşmazlıkları ve iade talepleri <strong>Google Play'in iade politikası çerçevesinde</strong> değerlendirilir. DataGuardVPN LLC, Google Play altyapısı üzerinden gerçekleştirilen ödemelerde doğrudan iade yetkisine sahip değildir. Google Play iade politikası hakkında bilgi için Google Play Yardım Merkezi'ne başvurunuz.</p>
+                    <p>Hizmet kalitesinden kaynaklanan özel iade talepleriniz için <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine yazabilirsiniz; talepler bireysel olarak incelenir ve DataGuardVPN LLC'nin takdir yetkisi dahilinde değerlendirilir.</p>
+
+                    <!-- BÖLÜM 6 -->
+                    <h2>6. DMCA Telif Hakkı Politikası</h2>
+
+                    <h3>6.1 Ara Hizmet Sağlayıcı Statüsü</h3>
+                    <p>DataGuardVPN LLC, Amerika Birleşik Devletleri'nde yürürlükte olan <strong>17 U.S.C. § 512 (Digital Millennium Copyright Act — DMCA)</strong> kapsamında bir <em>ara hizmet sağlayıcı</em> (mere conduit / transitory digital network communications provider) olarak faaliyet göstermektedir. Bu statü çerçevesinde Şirket; yalnızca kullanıcının talebini ileten, iletilen içeriği seçmeyen, depolamayan ve içerik üzerinde herhangi bir değişiklik yapmayan bir aracı konumundadır.</p>
+
+                    <h3>6.2 Teknik Kısıtlamalar</h3>
+                    <p>VPN bağlantılarının şifreli ve anlık yapısı gereği, tünel içinden iletilen içeriklerin teknik olarak tespit edilmesi, kaldırılması veya engellenmesi mümkün değildir. Şirket'in uyguladığı <strong>Kayıt Tutmama (No-Log) politikası</strong> gereği iletilen içeriklere ilişkin herhangi bir kayıt bulunmamaktadır. Bu nedenle içerik temelli DMCA kaldırma bildirimleri teknik olarak işleme alınamaz; telif hakkı ihlali iddiasında içerik barındıran sunucuya veya ilgili içerik sağlayıcıya başvurulması önerilir.</p>
+
+                    <h3>6.3 Tekrarlayan İhlallere Yönelik Politika</h3>
+                    <p>DMCA § 512(i) uyarınca DataGuardVPN LLC, telif hakkı ihlalini tekrarlayan kullanıcıları uygun koşullar altında hizmetten çıkarma politikasına sahiptir. Belgelenmiş ve tekrarlayan ihlaller nedeniyle bildirilen hesaplar incelemeye alınır; gerekli görülmesi halinde hesap kapatılır.</p>
+
+                    <h3>6.4 DMCA Bildirimi</h3>
+                    <p>Telif hakkı ihlali bildirimleri ve DMCA talepleri için:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: DMCA Notice)</li>
+                    </ul>
+                    <p>Geçerli bir DMCA bildirimi; telif hakkı sahibinin imzası, ihlal edilen eserin tanımlanması, ihlale konu materyalin konumu (varsa), iletişim bilgileri ve iyi niyetli inanç beyanını içermelidir (17 U.S.C. § 512(c)(3)).</p>
+
+                    <div class="success-box">
+                        <p><i class="ph-bold ph-shield-check mr-2"></i> <strong>No-Log Koruması:</strong> DataGuardVPN LLC'nin uyguladığı Kayıt Tutmama politikası gereği yetkili makamlara iletebileceğimiz VPN trafik içeriği, ziyaret edilen web siteleri veya DNS sorguları bulunmamaktadır. Trafik içeriğine ilişkin herhangi bir veri depolanmamaktadır.</p>
+                    </div>
+
+                    <!-- BÖLÜM 7 -->
+                    <h2>7. Uygulanacak Hukuk ve Uyuşmazlık Çözümü</h2>
+
+                    <h3>7.1 Uygulanacak Hukuk</h3>
+                    <p>Bu Sözleşme ve hizmetin kullanımından doğabilecek her türlü uyuşmazlık, kanunlar ihtilafı kurallarına bakılmaksızın <strong>Amerika Birleşik Devletleri'nin Wyoming eyaleti yasalarına</strong> tabidir. Wyoming Uniform Commercial Code ve federal ABD yasaları sözleşmenin yorumlanmasında esas alınır.</p>
+
+                    <h3>7.2 Yargı Yetkisi</h3>
+                    <p>Tüketiciyi koruma yasalarından doğan emredici ve vazgeçilmez haklar saklı kalmak kaydıyla, bu Sözleşme'den kaynaklanan her türlü hukuki uyuşmazlığın çözümünde münhasıran <strong>Wyoming eyaleti (ABD) eyalet veya federal mahkemeleri yetkilidir.</strong> Kullanıcı, bu mahkemelerin yargı yetkisini kabul eder.</p>
+
+                    <h3>7.3 Emredici Hakların Saklılığı</h3>
+                    <p>Bu madde; Türkiye'deki kullanıcıların KVKK kapsamındaki idari başvuru haklarını (Kişisel Verileri Koruma Kurumu), Avrupa'daki kullanıcıların GDPR kapsamındaki ulusal denetim otoritelerine başvuru haklarını, Birleşik Krallık'taki kullanıcıların ICO'ya başvuru haklarını ve ABD'li kullanıcıların CCPA kapsamındaki eyalet Attorney General başvuru haklarını etkilemez.</p>
+
+                    <h3>7.4 Şartlarda Değişiklik</h3>
+                    <p>DataGuardVPN LLC, bu Hizmet Şartları'nı önceden bildirerek değiştirme hakkını saklı tutar. Önemli değişiklikler yürürlüğe girmesinden en az <strong>7 gün önce</strong> uygulama bildirimi veya e-posta yoluyla duyurulur. Değişikliklerin yürürlüğe girmesinin ardından hizmeti kullanmaya devam etmeniz güncel şartları kabul ettiğiniz anlamına gelir.</p>
+
+                    <h3>7.5 Sözleşmenin Bütünlüğü</h3>
+                    <p>Bu Hizmet Şartları; <a href="privacy.html">Gizlilik Politikası</a> ve <a href="consent.html">İzin ve Tercih Yönetimi</a> sayfalarıyla birlikte kullanıcı ile DataGuardVPN LLC arasındaki sözleşmenin tamamını oluşturur ve daha önce yapılmış tüm sözlü veya yazılı anlaşmaların yerini alır. Sözleşmenin herhangi bir hükmünün geçersiz sayılması, diğer hükümlerin geçerliliğini etkilemez.</p>
+
+                    <h2>İletişim</h2>
+                    <p>Bu Hizmet Şartları'na ilişkin soru ve talepleriniz için:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: Hizmet Şartları)</li>
+                        <li><strong>Şirket:</strong> DataGuardVPN LLC, Wyoming, ABD</li>
+                        <li><strong>Web:</strong> <a href="contact.html">dataguardvpn.com/contact.html</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-card border-t border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-6 py-12 lg:px-8">
+            <div class="reveal p-8 bg-gray-800 rounded-xl md:flex md:items-center md:justify-between shadow-lg">
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Destek mi Lazım?</h3>
+                    <p class="text-gray-400 mt-1">7/24 destek ekibimizle iletişime geçin.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex-shrink-0">
+                    <a href="mailto:destek@dataguardvpn.com" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition duration-300">
+                        <i class="ph-bold ph-envelope-simple mr-2 text-xl"></i>
+                        destek@dataguardvpn.com
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 md:flex md:items-center md:justify-between">
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 md:order-2">
+                    <a href="index.html" class="text-gray-400 hover:text-white">Ana Sayfa</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white">Hakkımızda</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-white">Hizmet Şartları</a>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white">Gizlilik Politikası</a>
+                    <a href="consent.html" class="text-gray-400 hover:text-white">İzin Yönetimi</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white">İletişim</a>
+                </nav>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-gray-400">&copy; 2026 DataGuardVPN LLC. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
