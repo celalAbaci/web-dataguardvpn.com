@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası - DataGuardVPN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0f1f; color: #e0e0e0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        main section { animation: fadeIn 0.5s ease-in-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(10, 15, 31, 0.75); }
+        .bg-brand-dark { background-color: #0a0f1f; }
+        .bg-brand-card { background-color: #111827; }
+        .prose-content h2 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #374151; }
+        .prose-content h3 { font-size: 0.95rem; font-weight: 600; color: #93c5fd; margin-top: 1.25rem; margin-bottom: 0.4rem; }
+        .prose-content p { color: #d1d5db; line-height: 1.75; margin-bottom: 0.9rem; }
+        .prose-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ul li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.2rem; }
+        .prose-content ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .prose-content ol li { color: #d1d5db; line-height: 1.75; margin-bottom: 0.2rem; }
+        .prose-content strong { color: #f3f4f6; }
+        .prose-content a { color: #60a5fa; text-decoration: underline; }
+        .prose-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .prose-content th { background-color: #1f2937; color: #9ca3af; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.6rem 1rem; text-align: left; }
+        .prose-content td { padding: 0.65rem 1rem; border-bottom: 1px solid #374151; color: #d1d5db; font-size: 0.9rem; vertical-align: top; }
+        .prose-content tr:hover td { background-color: #1f2937; }
+        .info-box { background-color: #1e3a5f; border: 1px solid #2563eb66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .info-box p { color: #93c5fd; margin: 0; font-size: 0.9rem; }
+        .warning-box { background-color: #1c2a1a; border: 1px solid #16a34a66; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+        .warning-box p { color: #86efac; margin: 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200">
+
+    <!-- ===== HEADER ===== -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-custom shadow-lg border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="ic_logo(1).png" alt="DataGuardVPN Logo" class="h-12 w-12 object-contain" onerror="this.src='https://placehold.co/100x100/111827/3B82F6?text=DG'; this.onerror=null;">
+                    <span class="text-2xl font-extrabold text-white tracking-tight">DataGuardVPN</span>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Ana Sayfa</a>
+                    <a href="about.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Hakkımızda</a>
+                    <a href="privacy.html" class="text-blue-400 font-medium transition duration-300">Gizlilik Politikası</a>
+                    <a href="consent.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Açık Rıza</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-blue-400 transition duration-300">Kariyer</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-blue-400 transition duration-300">İletişim</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="contact.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="ph-bold ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-brand-card shadow-xl">
+            <a href="index.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Ana Sayfa</a>
+            <a href="about.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Hakkımızda</a>
+            <a href="privacy.html" class="block px-4 py-3 text-lg text-blue-400 hover:bg-gray-700">Gizlilik Politikası</a>
+            <a href="consent.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Açık Rıza Metni</a>
+            <a href="careers.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">Kariyer</a>
+            <a href="contact.html" class="block px-4 py-3 text-lg text-gray-200 hover:bg-gray-700">İletişim</a>
+            <div class="p-4">
+                <a href="contact.html" class="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">Bize Ulaşın</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ANA İÇERİK ===== -->
+    <main class="overflow-x-hidden">
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="reveal text-center mb-12">
+                    <span class="inline-block px-4 py-1.5 bg-blue-900/50 text-blue-400 text-sm font-semibold rounded-full mb-4 border border-blue-700/50">Gizliliğiniz Önceliğimizdir</span>
+                    <h1 class="text-4xl font-extrabold text-white mb-3">Gizlilik Politikası</h1>
+                    <p class="text-gray-400">Son güncelleme: Nisan 2026</p>
+                </div>
+
+                <div class="bg-brand-card p-10 rounded-xl shadow-2xl border border-gray-700/50 reveal prose-content">
+
+                    <div class="info-box">
+                        <p><i class="ph-bold ph-info mr-2"></i> Bu Gizlilik Politikası; DataGuardVPN uygulamasını ve web sitesini (dataguardvpn.com) kullandığınızda hangi kişisel verileri topladığımızı, bu verileri nasıl kullandığımızı, kimlerle paylaştığımızı ve haklarınızı açıklamaktadır. Hizmeti kullanarak bu politikada açıklanan uygulamaları kabul etmiş olursunuz.</p>
+                    </div>
+
+                    <h2>Gizlilik Taahhüdümüz</h2>
+                    <p>DataGuardVPN olarak dijital gizliliği bir hizmet özelliği olarak değil, temel bir hak olarak benimsiyoruz. VPN hizmetimizin özünde şu ilke yatmaktadır: <strong>DataGuardVPN, VPN tüneli üzerinden gerçekleştirdiğiniz gezinti, erişim veya iletişim faaliyetlerini hiçbir şekilde kaydetmez, izlemez ya da saklamaz.</strong></p>
+                    <p>VPN bağlantınız boyunca ziyaret ettiğiniz web siteleri, kullandığınız uygulamalar, ilettiğiniz mesajlar, DNS sorgularınız veya indirdiğiniz içerikler hakkında herhangi bir bilgi depolamıyoruz. Bağlantı süresince geçici olarak işlenen IP adresiniz, oturum sona erdiğinde sistemlerimizde hiçbir iz bırakmaz.</p>
+
+                    <h2>1. Topladığımız Bilgiler</h2>
+                    <p>DataGuardVPN; hizmetin sunulabilmesi, sürdürülebilmesi ve iyileştirilebilmesi için yalnızca zorunlu olan bilgileri toplar. Aşağıda hangi kategorilerde veri işlediğimizi ayrıntılı biçimde açıklıyoruz.</p>
+
+                    <h3>1.1 Hesap Bilgileri</h3>
+                    <p>Uygulama üzerinden hesap oluşturduğunuzda veya Google ile giriş yaptığınızda şu bilgileri işleriz:</p>
+                    <ul>
+                        <li><strong>E-posta ile kayıt:</strong> Kullanıcı adı, e-posta adresi ve şifreli (hash) parola</li>
+                        <li><strong>Google ile giriş:</strong> Google hesabınızın ad ve e-posta adresi (yalnızca bu seçeneği tercih edenlerde, Google OAuth2 aracılığıyla)</li>
+                    </ul>
+                    <p>Şifreler, güvenli bir şifreleme (bcrypt hash) yöntemiyle saklanır; düz metin olarak hiçbir zaman depolanmaz.</p>
+
+                    <h3>1.2 Cihaz Bilgileri</h3>
+                    <p>Uygulamanın çalıştığı cihaza ait teknik bilgileri toplarız. Bu bilgiler; uyumluluk sorunlarının giderilmesi, güvenlik anomalilerinin tespiti ve teknik destek süreçlerinde kullanılır:</p>
+                    <ul>
+                        <li>Cihaz modeli ve üreticisi</li>
+                        <li>İşletim sistemi sürümü (Android versiyonu)</li>
+                        <li>DataGuardVPN uygulama sürümü</li>
+                        <li>Benzersiz cihaz kimliği (aynı hesabın birden fazla cihazda kullanımını yönetmek için)</li>
+                    </ul>
+
+                    <h3>1.3 Bağlantı Meta Verileri</h3>
+                    <p>VPN bağlantı hizmetinin işlevselliğini korumak ve abonelik limitlerini yönetmek amacıyla aşağıdaki meta verileri işleriz. Bu veriler VPN tünel içeriğini kapsamaz; yalnızca bağlantının teknik karakteristiklerine ilişkindir:</p>
+                    <ul>
+                        <li>Bağlantı başlangıç ve bitiş zamanı</li>
+                        <li>Seçilen sunucu konumu (ülke/şehir düzeyinde)</li>
+                        <li>Kullanılan VPN protokolü (OpenVPN veya VLESS/Reality)</li>
+                        <li>Oturum süresi</li>
+                        <li>Bağlantı başarı/başarısızlık durumu</li>
+                    </ul>
+                    <p>Bu veriler; eş zamanlı bağlantı sayısı kontrolü, abonelik planı limitlerinin uygulanması ve hizmet kalitesinin izlenmesi için kullanılır.</p>
+
+                    <h3>1.4 Abonelik ve Ödeme Bilgileri</h3>
+                    <p>DataGuardVPN premium abonelikleri Google Play üzerinden yönetilmektedir. Abonelik işlemleri sırasında şu bilgileri işleriz:</p>
+                    <ul>
+                        <li>Abonelik planı türü (aylık, yıllık vb.)</li>
+                        <li>Abonelik başlangıç ve bitiş tarihleri</li>
+                        <li>Google Play tarafından sağlanan işlem doğrulama tokeni</li>
+                        <li>Aktiflik durumu ve otomatik yenileme bilgisi</li>
+                    </ul>
+                    <p>Kredi kartı numarası, banka hesabı veya ödeme aracına ait herhangi bir veri DataGuardVPN sistemlerine iletilmez; bu bilgiler yalnızca Google Play'in güvenli ödeme altyapısında işlenir.</p>
+
+                    <h3>1.5 Müşteri Destek İletişimleri</h3>
+                    <p>Destek ekibimizle e-posta veya uygulama içi bildirim kanallarından iletişime geçtiğinizde; destek talebinizin içeriği, gönderim tarihi ve çözüm süreci kayıt altına alınır. Bu bilgiler yalnızca ilgili talebinizi sonuçlandırmak ve hizmet kalitesini iyileştirmek amacıyla kullanılır.</p>
+
+                    <h3>1.6 Kullanım Analitiği</h3>
+                    <p>Hizmetlerimizi geliştirmek amacıyla VPN tünel içeriğiyle hiçbir şekilde ilişkilendirilemeyen teknik performans verilerini toplarız:</p>
+                    <ul>
+                        <li>Bağlantı başarı oranları ve protokol bazlı performans metrikleri</li>
+                        <li>Uygulama çöküş raporları ve hata günlükleri</li>
+                        <li>Özellik kullanım istatistikleri (hangi sunucu bölgelerinin tercih edildiği gibi)</li>
+                    </ul>
+                    <p>Bu analizler yalnızca toplu ve anonimleştirilmiş biçimde değerlendirilir; bireysel kullanıcılarla ilişkilendirilmez.</p>
+
+                    <div class="warning-box">
+                        <p><i class="ph-bold ph-shield-check mr-2"></i> <strong>Kesinlikle kaydetmediğimiz veriler:</strong> VPN tüneli üzerinden ziyaret ettiğiniz web siteleri ve URL'ler — DNS sorgularınız — ilettiğiniz mesajlar, e-postalar veya dosyalar — kullandığınız uygulamalar veya hizmetler — içerik akışı verileri — VPN bağlantısı süresince atanan geçici IP adresiniz.</p>
+                    </div>
+
+                    <h2>2. Topladığımız Bilgileri Nasıl Kullanıyoruz</h2>
+                    <p>Topladığımız kişisel bilgiler; hizmetin sunulması, sürdürülmesi ve güvence altına alınması için kullanılır. Bilgilerinizi hiçbir zaman üçüncü taraflara satmıyor, kiralamıyor ya da reklam amacıyla paylaşmıyoruz.</p>
+                    <table>
+                        <thead>
+                            <tr><th>Kullanım Amacı</th><th>Açıklama</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hizmet sunumu</strong></td>
+                                <td>VPN bağlantısının kurulması ve yönetimi, hesap doğrulama, oturum yönetimi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Abonelik yönetimi</strong></td>
+                                <td>Planın doğrulanması, eş zamanlı bağlantı limitlerinin kontrolü, yenileme ve iptal işlemleri</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Müşteri desteği</strong></td>
+                                <td>Sorunların tanımlanması ve çözülmesi, destek taleplerinin takibi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Güvenlik ve doğrulama</strong></td>
+                                <td>Hesap ele geçirme ve hizmet kötüye kullanımının tespiti, şüpheli oturumların engellenmesi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hizmet iyileştirme</strong></td>
+                                <td>Bağlantı kalitesinin artırılması, sunucu altyapısının optimize edilmesi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>İletişim</strong></td>
+                                <td>Kritik hizmet bildirimleri, güvenlik uyarıları ve abonelik hatırlatıcıları (rıza vermeniz durumunda pazarlama içerikleri)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Yasal yükümlülükler</strong></td>
+                                <td>Yürürlükteki mevzuatın gerektirdiği saklama ve raporlama yükümlülüklerinin yerine getirilmesi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>3. Üçüncü Taraflarla Bilgi Paylaşımı</h2>
+                    <p>Kişisel verilerinizi üçüncü taraflara satmıyoruz. Bilgileriniz yalnızca aşağıda belirtilen sınırlı durumlarda ve amaca orantılı ölçüde paylaşılabilir:</p>
+
+                    <h3>3.1 Google LLC</h3>
+                    <p>Google ile olan entegrasyonumuz iki ayrı kapsamda gerçekleşmektedir:</p>
+                    <ul>
+                        <li><strong>Google Sign-In (OAuth2):</strong> Bu seçeneği tercih etmeniz durumunda, Google hesabınızdan yalnızca ad ve e-posta bilgileri alınır. Google'ın kimlik doğrulama servisleri kendi gizlilik politikası çerçevesinde çalışır.</li>
+                        <li><strong>Google Play Faturalandırma:</strong> Abonelik satın alımlarında ödeme bilgileriniz Google Play'in güvenli altyapısında işlenir. Ödemenin geçerliliğini doğrulamak amacıyla yalnızca işlem tokeni DataGuardVPN sistemlerine iletilir.</li>
+                    </ul>
+                    <p>Google'ın veri işleme pratikleri hakkında bilgi almak için: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+
+                    <h3>3.2 Altyapı ve Hizmet Sağlayıcıları</h3>
+                    <p>VPN sunucu altyapısını işleten veri merkezi ve bulut sağlayıcıları ile çalışmaktayız. Bu sağlayıcılar; gizlilik taahhütlerini içeren veri işleme sözleşmeleri kapsamında yalnızca hizmetin teknik işleyişi için gereken minimum teknik verilerle muhatap olur. Söz konusu sağlayıcıların VPN trafik içeriğine erişim yetkisi bulunmamaktadır.</p>
+
+                    <h3>3.3 Yasal Zorunluluklar</h3>
+                    <p>Yetkili makamların yasal bir talebi doğrultusunda, yürürlükteki mevzuatın zorunlu kıldığı hallerde ve yalnızca talep edilen minimum düzeyde bilgi paylaşılabilir. VPN tünel içeriği hiçbir zaman kaydedilmediğinden, trafik içeriğine ilişkin paylaşılabilecek herhangi bir veri bulunmamaktadır. Yasal zorunluluk olmaksızın herhangi bir makamla gönüllü bilgi paylaşımı yapılmaz.</p>
+
+                    <h3>3.4 İş Sürekliliği</h3>
+                    <p>DataGuardVPN'in tamamının veya bir bölümünün devredilmesi, birleşme ya da satın alma süreçlerinde kullanıcı bilgileri devralan tarafa aktarılabilir. Böyle bir durumda, işlemin gerçekleşmesinden önce kullanıcılar e-posta yoluyla bilgilendirilecek ve yeni gizlilik politikası açıklanacaktır.</p>
+
+                    <h2>4. Reklamlar</h2>
+                    <p>DataGuardVPN tamamen ücretli, aboneliğe dayalı bir hizmettir. Uygulamamızda herhangi bir reklam gösterilmez; ne ücretsiz katman ne de premium katman için reklam ağlarına kullanıcı verisi iletilmez. Kişisel bilgileriniz hiçbir zaman reklam amacıyla profillendirilmez veya üçüncü taraf reklam platformlarıyla paylaşılmaz.</p>
+
+                    <h2>5. Güvenlik Önlemleri</h2>
+                    <p>Kişisel verilerinizin güvenliğini sağlamak amacıyla endüstri standartlarında teknik ve idari tedbirler uyguluyoruz:</p>
+                    <ul>
+                        <li><strong>Aktarım güvenliği:</strong> Uygulama ile sunucularımız arasındaki tüm iletişim TLS/SSL ile şifrelenir.</li>
+                        <li><strong>VPN tünel şifrelemesi:</strong> OpenVPN bağlantıları AES-256-GCM, VLESS/Reality bağlantıları ise protokolün kendi sertifikalı şifreleme katmanıyla korunur.</li>
+                        <li><strong>Erişim kontrolü:</strong> Kişisel verilere erişim, yalnızca görev gerektiren personelle sınırlıdır; rol tabanlı yetkilendirme sistemi uygulanır.</li>
+                        <li><strong>Parola güvenliği:</strong> Parolalar bcrypt algoritmasıyla hash'lenir; düz metin olarak hiçbir zaman saklanmaz veya iletilmez.</li>
+                        <li><strong>Ödeme bilgileri:</strong> Kart numarası ve banka bilgileri DataGuardVPN altyapısına hiçbir zaman aktarılmaz; ödeme işlemleri tamamen Google Play tarafından yürütülür.</li>
+                        <li><strong>Düzenli güvenlik değerlendirmeleri:</strong> Altyapı ve uygulama güvenliği periyodik olarak gözden geçirilir.</li>
+                    </ul>
+                    <p>Hiçbir güvenlik sistemi mutlak koruma sağlayamaz. Hesabınıza ilişkin şüpheli bir durum fark etmeniz halinde derhal <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresine bildirmenizi öneririz.</p>
+
+                    <h2>6. Veri Saklama Süreleri</h2>
+                    <p>Kişisel verilerinizi yalnızca toplama amacının gerektirdiği süre ya da yasal yükümlülükler kapsamında zorunlu olan süre boyunca saklarız. Aşağıdaki tablo, her veri kategorisi için uygulanan saklama sürelerini göstermektedir:</p>
+                    <table>
+                        <thead>
+                            <tr><th>Veri Kategorisi</th><th>Saklama Süresi</th><th>Dayanak</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hesap ve kimlik verileri</td>
+                                <td>Hesap aktif olduğu süre; hesap silinmesinin ardından en fazla 30 gün</td>
+                                <td>Hizmet sunumu</td>
+                            </tr>
+                            <tr>
+                                <td>Bağlantı meta verileri</td>
+                                <td>Azami 90 gün</td>
+                                <td>Hizmet yönetimi ve güvenlik</td>
+                            </tr>
+                            <tr>
+                                <td>Abonelik kayıtları</td>
+                                <td>Aboneliğin sona ermesinden itibaren 10 yıl</td>
+                                <td>Vergi ve ticaret mevzuatı</td>
+                            </tr>
+                            <tr>
+                                <td>Müşteri destek talepleri</td>
+                                <td>Talebin kapanmasından itibaren 2 yıl</td>
+                                <td>Hizmet kalitesi ve yasal uyumluluk</td>
+                            </tr>
+                            <tr>
+                                <td>Uygulama çöküş ve hata günlükleri</td>
+                                <td>Azami 30 gün</td>
+                                <td>Teknik iyileştirme</td>
+                            </tr>
+                            <tr>
+                                <td>VPN trafik içeriği</td>
+                                <td>Hiçbir zaman saklanmaz</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Saklama süresi dolan veriler güvenli biçimde silinir veya anonimleştirilir.</p>
+
+                    <h2>7. Çocukların Gizliliği</h2>
+                    <p>DataGuardVPN hizmetleri 13 yaşın altındaki çocuklara yönelik değildir ve bu yaş grubundan bilerek kişisel veri toplamıyoruz. Uygulama veya web sitemizin bir çocuk tarafından kullanıldığını fark etmeniz durumunda lütfen <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> adresiyle iletişime geçin; ilgili hesabı ve verileri derhal sileceğiz. Türkiye'de 18 yaşın altındaki kullanıcıların DataGuardVPN'i yalnızca ebeveyn veya yasal vasi gözetiminde kullanması önerilir.</p>
+
+                    <h2>8. Kullanıcı Hakları</h2>
+                    <p>Uygulanabilir gizlilik mevzuatı kapsamında, kişisel verileriniz üzerinde aşağıdaki haklara sahipsiniz:</p>
+
+                    <h3>8.1 Tüm Kullanıcılar İçin Geçerli Haklar</h3>
+                    <ul>
+                        <li><strong>Erişim hakkı:</strong> Hakkınızda işlediğimiz kişisel verilerin bir kopyasını talep edebilirsiniz.</li>
+                        <li><strong>Düzeltme hakkı:</strong> Yanlış veya eksik bilgilerin düzeltilmesini isteyebilirsiniz.</li>
+                        <li><strong>Silme hakkı:</strong> Belirli koşulların varlığı halinde kişisel verilerinizin silinmesini talep edebilirsiniz. Hesabınızı uygulama üzerinden de silebilirsiniz.</li>
+                        <li><strong>İşlemeyi kısıtlama hakkı:</strong> Kişisel verilerinizin işlenmesini belirli koşullarda kısıtlamamızı isteyebilirsiniz.</li>
+                        <li><strong>Veri taşınabilirliği hakkı:</strong> Verilerinizi makine tarafından okunabilir bir formatta almanızı sağlayabiliriz.</li>
+                        <li><strong>İtiraz hakkı:</strong> Meşru menfaate dayalı veri işleme faaliyetlerine itiraz edebilirsiniz.</li>
+                        <li><strong>Rızayı geri alma hakkı:</strong> Pazarlama iletişimi gibi rızaya dayalı işleme faaliyetleri için verdiğiniz onayı istediğiniz zaman geri çekebilirsiniz.</li>
+                    </ul>
+
+                    <h3>8.2 Türkiye'deki Kullanıcılar (KVKK Kapsamında Ek Haklar)</h3>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında Türkiye'deki kullanıcılarımız ayrıca şu haklara sahiptir:</p>
+                    <ul>
+                        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                        <li>İşlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme</li>
+                        <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+                        <li>Münhasıran otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+                        <li>Kanuna aykırı işleme nedeniyle uğradığınız zararın giderilmesini talep etme</li>
+                        <li>Talebin reddedilmesi veya yanıtsız kalması durumunda <strong>Kişisel Verileri Koruma Kurumu</strong>'na şikâyette bulunma</li>
+                    </ul>
+
+                    <h3>8.3 Avrupa ve Birleşik Krallık'taki Kullanıcılar (GDPR Kapsamında)</h3>
+                    <p>Avrupa Ekonomik Alanı veya Birleşik Krallık'ta ikamet eden kullanıcılarımız, GDPR kapsamındaki haklarını kullanmak için aşağıdaki iletişim kanalına başvurabilir. Talepler, geçerli veri koruma mevzuatının öngördüğü süreler içinde yanıtlanır.</p>
+
+                    <h2>9. Haklarınızı Nasıl Kullanırsınız</h2>
+                    <p>Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki kanalı kullanabilirsiniz:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a> (Konu: Gizlilik Talebi)</li>
+                        <li><strong>Web sitesi:</strong> <a href="contact.html">dataguardvpn.com/contact.html</a></li>
+                    </ul>
+                    <p>Talebinizde; adınız, kayıtlı e-posta adresiniz ve talep konunuzun açıklamasını belirtmeniz yeterlidir. Güvenliğiniz için kimliğinizi doğrulamamız gerekebilir. Talepler, teslim alındıktan itibaren en geç <strong>30 gün</strong> içinde ücretsiz olarak yanıtlanır. İşlemin ayrıca bir maliyet gerektirdiği durumlarda, devam etmeden önce tarafınıza bilgi verilir.</p>
+
+                    <h2>10. Uluslararası Veri Transferleri</h2>
+                    <p>VPN sunucu altyapısının yapısı gereği veriler farklı ülkelerdeki sunucularda işlenebilir. Yurt dışı veri transferleri; Türkiye için KVKK'nın 9. maddesi, AB/AEA kullanıcıları için ise GDPR'ın 46. maddesi kapsamında standart sözleşme maddeleri veya yeterlilik kararları gibi uygun güvencelerle gerçekleştirilir. Google hizmetlerine ilişkin transferler, Google'ın onaylı Standart Sözleşme Maddeleri çerçevesinde yürütülmektedir.</p>
+
+                    <h2>11. Bu Politikadaki Değişiklikler</h2>
+                    <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Kişisel verilerinizin işlenme biçimini etkileyen önemli değişiklikler, yürürlüğe girmesinden en az <strong>7 gün önce</strong> e-posta yoluyla ve uygulama içi bildirimle duyurulur. Güncel politikanın yürürlük tarihi her zaman bu sayfanın üst kısmında belirtilir.</p>
+                    <p>Değişikliğin yürürlüğe girmesinin ardından hizmeti kullanmaya devam etmeniz, güncellenmiş Gizlilik Politikasını kabul ettiğiniz anlamına gelir. Politikanın önceki sürümlerini talep etmek isterseniz destek ekibimizle iletişime geçebilirsiniz.</p>
+
+                    <h2>12. Bize Ulaşın</h2>
+                    <p>Gizlilik politikamız veya kişisel verilerinizin işlenmesine ilişkin sorularınız, talepleriniz ya da şikâyetleriniz için:</p>
+                    <ul>
+                        <li><strong>E-posta:</strong> <a href="mailto:destek@dataguardvpn.com">destek@dataguardvpn.com</a></li>
+                        <li><strong>Web sitesi:</strong> <a href="https://dataguardvpn.com" target="_blank" rel="noopener noreferrer">dataguardvpn.com</a></li>
+                    </ul>
+                    <p>Talebinizi aldığımızı teyit eden bir e-posta gönderilecek ve süreç hakkında düzenli bilgilendirme yapılacaktır.</p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-brand-card border-t border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-6 py-12 lg:px-8">
+            <div class="reveal p-8 bg-gray-800 rounded-xl md:flex md:items-center md:justify-between shadow-lg">
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Destek mi Lazım?</h3>
+                    <p class="text-gray-400 mt-1">7/24 destek ekibimizle iletişime geçin.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex-shrink-0">
+                    <a href="mailto:destek@dataguardvpn.com" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition duration-300">
+                        <i class="ph-bold ph-envelope-simple mr-2 text-xl"></i>
+                        destek@dataguardvpn.com
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 md:flex md:items-center md:justify-between">
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 md:order-2">
+                    <a href="index.html" class="text-gray-400 hover:text-white">Ana Sayfa</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white">Hakkımızda</a>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white">Gizlilik Politikası</a>
+                    <a href="consent.html" class="text-gray-400 hover:text-white">Açık Rıza</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white">İletişim</a>
+                </nav>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-gray-400">&copy; 2026 DataGuardVPN. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
